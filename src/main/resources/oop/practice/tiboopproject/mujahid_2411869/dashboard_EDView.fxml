@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="643.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.Dashboard_EdController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="20.0" prefWidth="752.0" style="-fx-background-color: cyan;" text="Executive Directory">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="38.0" layoutY="107.0" mnemonicParsing="false" onAction="#SendAnOrganizationalAnnouncementButtonOA" prefHeight="46.0" prefWidth="287.0" text="Send an Organizational Announcement" />
+      <Button layoutX="399.0" layoutY="107.0" mnemonicParsing="false" onAction="#CreateAndScheduleExecutiveMeetingAgendaButtonOA" prefHeight="47.0" prefWidth="287.0" text="Create and Schedule Executive Meeting Agenda" />
+      <Button layoutX="38.0" layoutY="175.0" mnemonicParsing="false" onAction="#CreateAndManageOrganisationalPoliciesButtonOA" prefHeight="46.0" prefWidth="287.0" text="Create and Manage Organisational Policies" />
+      <Button layoutX="399.0" layoutY="175.0" mnemonicParsing="false" onAction="#SignStrategicInstitutionalMoUsButtonOA" prefHeight="47.0" prefWidth="287.0" text="Sign Strategic Institutional MoUs" />
+      <Button layoutX="38.0" layoutY="246.0" mnemonicParsing="false" onAction="#ReleaseOfficialPressStatementsButtonOA" prefHeight="46.0" prefWidth="287.0" text="Release Official Press Statements" />
+      <Button layoutX="399.0" layoutY="246.0" mnemonicParsing="false" onAction="#FinalizeAnnualStrategicRoadmapButtonOA" prefHeight="47.0" prefWidth="287.0" text="Finalize Annual Strategic Roadmap" />
+      <Button layoutX="38.0" layoutY="314.0" mnemonicParsing="false" onAction="#ReviewAndApproveOrRejectAResearchDraftButtonOA" prefHeight="46.0" prefWidth="287.0" text="Review and Approve or Reject a Research Draft" />
+      <Button layoutX="399.0" layoutY="314.0" mnemonicParsing="false" onAction="#ManagePersonalExecutiveTasksButtonOA" prefHeight="47.0" prefWidth="287.0" text="Manage Personal Executive Tasks" />
+   </children>
+</AnchorPane>
