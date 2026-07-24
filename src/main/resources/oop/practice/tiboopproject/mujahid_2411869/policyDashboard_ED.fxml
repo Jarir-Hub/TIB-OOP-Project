@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.PolicyDashboardViewED">
+   <children>
+      <Button layoutX="322.0" layoutY="538.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="50.0" prefWidth="150.0" text="Executive Directory" />
+      <Button layoutX="322.0" layoutY="460.0" mnemonicParsing="false" onAction="#createNewPolicyButtonOA" prefHeight="50.0" prefWidth="150.0" text="Create New Policy" />
+      <TableView fx:id="policyTV" layoutX="-1.0" layoutY="77.0" prefHeight="323.0" prefWidth="750.0">
+         <columns>
+            <TableColumn fx:id="policyIdTC" prefWidth="126.80597591400146" text="Policy ID" />
+            <TableColumn fx:id="policyNameTC" minWidth="0.0" prefWidth="197.73135375976562" text="Policy Name" />
+            <TableColumn fx:id="categoryTC" prefWidth="156.8955078125" text="Category" />
+            <TableColumn fx:id="effectiveDateTC" minWidth="0.0" prefWidth="148.29849243164062" text="Effective Date" />
+            <TableColumn fx:id="statusTC" prefWidth="121.07464599609375" text="Status" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Policy Dashboard">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

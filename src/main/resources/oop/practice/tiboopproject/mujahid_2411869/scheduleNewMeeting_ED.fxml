@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.practice.tiboopproject.mujahid_2411869.ScheduleNewMeetingViewED"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.ScheduleNewMeetingViewED">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Meeting Dashboard">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Text layoutX="72.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Title :" />
+      <TextField fx:id="meetingTitleTF" layoutX="171.0" layoutY="114.0" />
+      <Text layoutX="70.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Date :" />
+      <TextField fx:id="agendaPointsTF" layoutX="426.0" layoutY="116.0" prefHeight="127.0" prefWidth="249.0" />
+      <DatePicker fx:id="meetingDateDP" layoutX="171.0" layoutY="166.0" prefHeight="26.0" prefWidth="150.0" />
+      <Text layoutX="511.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agenda Points" />
+      <ComboBox fx:id="participantsCMB" layoutX="171.0" layoutY="220.0" prefWidth="150.0" />
+      <Text layoutX="70.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participants :" />
+      <Button layoutX="110.0" layoutY="450.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="50.0" prefWidth="150.0" text="Executive Directory" />
+      <Button layoutX="475.0" layoutY="450.0" mnemonicParsing="false" onAction="#saveMeetingButtonOA" prefHeight="50.0" prefWidth="150.0" text="Save Meeting" />
+      <Label fx:id="confirmationLabel" alignment="CENTER" layoutX="464.0" layoutY="364.0" prefHeight="62.0" prefWidth="172.0" text="Confirmation Message" />
+   </children>
 </AnchorPane>

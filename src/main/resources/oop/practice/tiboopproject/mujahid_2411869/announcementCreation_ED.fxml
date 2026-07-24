@@ -8,10 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.AnnouncementCreationViewED">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: cyan;" text="Announcement Creation">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Announcement Creation">
          <font>
             <Font size="14.0" />
          </font>
@@ -24,6 +23,7 @@
       <Text layoutX="43.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Target Audience :" />
       <Text layoutX="58.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author Name :" />
       <TextField fx:id="authorNameTF" layoutX="147.0" layoutY="148.0" />
-      <Button layoutX="458.0" layoutY="300.0" mnemonicParsing="false" onAction="#sendAnnouncementButtonOA" prefHeight="50.0" prefWidth="150.0" text="Send Announcement" />
+      <Button layoutX="458.0" layoutY="438.0" mnemonicParsing="false" onAction="#sendAnnouncementButtonOA" prefHeight="50.0" prefWidth="150.0" text="Send Announcement" />
+      <Button layoutX="147.0" layoutY="438.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="50.0" prefWidth="150.0" text="Executive Directory" />
    </children>
 </AnchorPane>

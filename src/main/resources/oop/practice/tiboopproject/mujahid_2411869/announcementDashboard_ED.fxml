@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.AnnouncementDashboardViewED">
    <children>
-      <TableView fx:id="executiveAnnouncementTV" layoutX="17.0" layoutY="57.0" prefHeight="323.0" prefWidth="750.0">
+      <TableView fx:id="executiveAnnouncementTV" layoutY="57.0" prefHeight="323.0" prefWidth="750.0">
         <columns>
           <TableColumn fx:id="announcementIdTC" prefWidth="146.14922332763672" text="Announcement ID" />
           <TableColumn fx:id="announcementTitleTC" prefWidth="143.28363037109375" text="Announcement Title" />
@@ -18,12 +18,12 @@
             <TableColumn fx:id="authorNameTC" prefWidth="165.492431640625" text="Author Name" />
         </columns>
       </TableView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-10.0" layoutY="-1.0" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: cyan;" text="Executive Announcement">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Executive Announcement">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="616.0" layoutY="386.0" mnemonicParsing="false" onAction="#newAnnouncementButtonOA" prefHeight="50.0" prefWidth="150.0" text="New Announcement" />
-      <Button layoutX="17.0" layoutY="585.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="45.0" prefWidth="125.0" text="Executive Directory" />
+      <Button layoutX="315.0" layoutY="424.0" mnemonicParsing="false" onAction="#newAnnouncementButtonOA" prefHeight="50.0" prefWidth="150.0" text="New Announcement" />
+      <Button layoutX="315.0" layoutY="509.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="50.0" prefWidth="150.0" text="Executive Directory" />
    </children>
 </AnchorPane>

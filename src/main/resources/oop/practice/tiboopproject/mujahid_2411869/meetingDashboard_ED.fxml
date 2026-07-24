@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.MeetingDashboardViewED">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: cyan;" text="Meeting Dashboard">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Meeting Dashboard">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="meetingTV" layoutX="27.0" layoutY="67.0" prefHeight="323.0" prefWidth="750.0">
+      <TableView fx:id="meetingTV" layoutY="67.0" prefHeight="323.0" prefWidth="750.0">
          <columns>
             <TableColumn fx:id="meetingIdTC" prefWidth="118.92538213729858" text="Meeting ID" />
             <TableColumn fx:id="meetingTimeTC" minWidth="0.0" prefWidth="125.37310791015625" text="Meeting Title" />
@@ -23,10 +22,10 @@
             <TableColumn fx:id="scheduledTimeTC" minWidth="0.0" prefWidth="136.8358154296875" text="Scheduled Time" />
             <TableColumn fx:id="authorNameTC" minWidth="0.0" prefWidth="0.0" text="Participant Count" />
             <TableColumn fx:id="participantCountTC" prefWidth="136.8358154296875" text="Participant Count" />
-            <TableColumn fx:id="statusTC" prefWidth="89.55224609375" text="Status" />
+            <TableColumn fx:id="announcementDateTC21" prefWidth="89.55224609375" text="Status" />
          </columns>
       </TableView>
       <Button layoutX="317.0" layoutY="432.0" mnemonicParsing="false" onAction="#scheduleNewMeetingButtonOA" prefHeight="50.0" prefWidth="140.0" text="Schedule New Meeting" />
-      <Button layoutX="324.0" layoutY="532.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="45.0" prefWidth="125.0" text="Executive Directory" />
+      <Button layoutX="312.0" layoutY="528.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="50.0" prefWidth="150.0" text="Executive Directory" />
    </children>
 </AnchorPane>
