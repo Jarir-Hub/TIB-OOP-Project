@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.ManageExecutiveTaskDashboardViewED">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Manage Executive Task Dashboard">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="executiveTaskTV" layoutY="67.0" prefHeight="323.0" prefWidth="750.0">
+         <columns>
+            <TableColumn fx:id="taskIdTC" prefWidth="146.14922332763672" text="Task ID" />
+            <TableColumn fx:id="titleTC" prefWidth="143.28363037109375" text="Title" />
+            <TableColumn fx:id="priorityLevelTC" prefWidth="136.119384765625" text="Priority Level" />
+            <TableColumn fx:id="dueDateTC" prefWidth="162.62692260742188" text="Due Date" />
+            <TableColumn fx:id="statusTC" prefWidth="165.492431640625" text="Status" />
+         </columns>
+      </TableView>
+      <Button layoutX="325.0" layoutY="434.0" mnemonicParsing="false" onAction="#addNewTaskButtonOA" prefHeight="50.0" prefWidth="150.0" text="Add New Task" />
+      <Button layoutX="325.0" layoutY="519.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="50.0" prefWidth="150.0" text="Executive Directory" />
+   </children>
+</AnchorPane>
