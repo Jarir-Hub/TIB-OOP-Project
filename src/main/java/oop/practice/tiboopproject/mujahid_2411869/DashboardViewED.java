@@ -1,9 +1,5 @@
 package oop.practice.tiboopproject.mujahid_2411869;
 
-import javafx.event.ActionEvent;
-
-import java.io.IOException;
-
 public class DashboardViewED
 {
     @javafx.fxml.FXML
@@ -39,6 +35,6 @@ public class DashboardViewED
     }
 
     @javafx.fxml.FXML
-    public void SendAnOrganizationalAnnouncementButtonOA(ActionEvent actionEvent) throws IOException {
+    public void SendAnOrganizationalAnnouncementButtonOA(ActionEvent actionEvent) {
     }
 }
