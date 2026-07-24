@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.AnnouncementDashboardViewED">
+   <children>
+      <TableView fx:id="executiveAnnouncementTV" layoutX="17.0" layoutY="57.0" prefHeight="323.0" prefWidth="750.0">
+        <columns>
+          <TableColumn fx:id="announcementIdTC" prefWidth="146.14922332763672" text="Announcement ID" />
+          <TableColumn fx:id="announcementTitleTC" prefWidth="143.28363037109375" text="Announcement Title" />
+            <TableColumn fx:id="targetAudienceTC" prefWidth="136.119384765625" text="Target Audience" />
+            <TableColumn fx:id="announcementDateTC" prefWidth="162.62692260742188" text="Announcement Date" />
+            <TableColumn fx:id="authorNameTC" prefWidth="165.492431640625" text="Author Name" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-10.0" layoutY="-1.0" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: cyan;" text="Executive Announcement">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="616.0" layoutY="386.0" mnemonicParsing="false" onAction="#newAnnouncementButtonOA" prefHeight="50.0" prefWidth="150.0" text="New Announcement" />
+      <Button layoutX="17.0" layoutY="585.0" mnemonicParsing="false" onAction="#ececutiveDirectoryButtonOA" prefHeight="45.0" prefWidth="125.0" text="Executive Directory" />
+   </children>
+</AnchorPane>

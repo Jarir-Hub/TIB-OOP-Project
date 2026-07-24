@@ -1,6 +1,6 @@
 package oop.practice.tiboopproject.mujahid_2411869;
 
-public class OrganizationalAnnouncement_EDController
+public class OrganizationalAnnouncementViewED
 {
     @javafx.fxml.FXML
     public void initialize() {
