@@ -1,9 +1,7 @@
 package oop.practice.tiboopproject.mujahid_2411869;
 
-public class OrganizationalAnnouncementViewED
+public class ScheduleNewMeetingViewED
 {
     @javafx.fxml.FXML
     public void initialize() {
-
-    }
-    }
+    }}

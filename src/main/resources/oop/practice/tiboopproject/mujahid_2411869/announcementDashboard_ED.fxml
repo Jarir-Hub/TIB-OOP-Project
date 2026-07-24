@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.AnnouncementDashboardViewED">
    <children>
       <TableView fx:id="executiveAnnouncementTV" layoutX="17.0" layoutY="57.0" prefHeight="323.0" prefWidth="750.0">
@@ -25,6 +24,6 @@
          </font>
       </Label>
       <Button layoutX="616.0" layoutY="386.0" mnemonicParsing="false" onAction="#newAnnouncementButtonOA" prefHeight="50.0" prefWidth="150.0" text="New Announcement" />
-      <Button layoutX="17.0" layoutY="585.0" mnemonicParsing="false" onAction="#ececutiveDirectoryButtonOA" prefHeight="45.0" prefWidth="125.0" text="Executive Directory" />
+      <Button layoutX="17.0" layoutY="585.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="45.0" prefWidth="125.0" text="Executive Directory" />
    </children>
 </AnchorPane>
