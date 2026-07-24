@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.DashboardViewED">
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.Dashboard_EdController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="20.0" prefWidth="752.0" style="-fx-background-color: cyan;" text="Executive Directory">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Executive Directory">
          <font>
             <Font size="14.0" />
          </font>
