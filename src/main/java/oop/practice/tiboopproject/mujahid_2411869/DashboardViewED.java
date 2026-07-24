@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 
 import java.io.IOException;
 
-public class Dashboard_EdController
+public class DashboardViewED
 {
     @javafx.fxml.FXML
     public void initialize() {
