@@ -25,5 +25,6 @@
       <TextField fx:id="authorNameTF" layoutX="147.0" layoutY="148.0" />
       <Button layoutX="458.0" layoutY="438.0" mnemonicParsing="false" onAction="#sendAnnouncementButtonOA" prefHeight="50.0" prefWidth="150.0" text="Send Announcement" />
       <Button layoutX="147.0" layoutY="438.0" mnemonicParsing="false" onAction="#executiveDirectoryButtonOA" prefHeight="50.0" prefWidth="150.0" text="Executive Directory" />
+      <Label fx:id="confirmationLabel" alignment="CENTER" layoutX="447.0" layoutY="350.0" prefHeight="62.0" prefWidth="172.0" text="Confirmation Message" />
    </children>
 </AnchorPane>
