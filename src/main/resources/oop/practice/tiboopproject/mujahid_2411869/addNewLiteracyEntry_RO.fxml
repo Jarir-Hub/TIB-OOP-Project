@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.CreateResearchProjectControllerRO">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Create Research Project">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="290.0" layoutY="481.0" mnemonicParsing="false" onAction="#researchOperationsHubButtonOA" prefHeight="50.0" prefWidth="170.0" text="Research Operations Hub" />
+      <Button layoutX="470.0" layoutY="241.0" mnemonicParsing="false" onAction="#saveEntryButtonOA" prefHeight="50.0" prefWidth="170.0" text="Save Entry" />
+      <Text layoutX="80.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Article Title :" />
+      <Text layoutX="75.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source URL :" />
+      <Text layoutX="73.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lead Author :" />
+      <Text layoutX="495.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation Message" wrappingWidth="121.07148742675781" />
+      <Text layoutX="68.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Key Findings :" />
+      <TextField fx:id="articleTitleTF" layoutX="163.0" layoutY="110.0" />
+      <TextField fx:id="keyFindingTF" layoutX="163.0" layoutY="266.0" prefHeight="118.0" prefWidth="151.0" />
+      <Label fx:id="confirmationLabel" layoutX="460.0" layoutY="114.0" prefHeight="57.0" prefWidth="191.0" />
+      <TextField fx:id="sourceUrlTF" layoutX="163.0" layoutY="218.0" />
+      <TextField fx:id="leadAuthorTF" layoutX="163.0" layoutY="158.0" />
+   </children>
+</AnchorPane>

@@ -9,17 +9,15 @@ import javafx.scene.control.TextField;
 public class CreateResearchProjectControllerRO
 {
     @javafx.fxml.FXML
-    private TextField projectTitleTF;
-    @javafx.fxml.FXML
-    private ComboBox sectorCMB;
-    @javafx.fxml.FXML
-    private TextField leadResearcherTF;
-    @javafx.fxml.FXML
-    private TextField estimatedBudgetTF;
-    @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
-    private DatePicker startDateDP;
+    private TextField sourceUrlTF;
+    @javafx.fxml.FXML
+    private TextField leadAuthorTF;
+    @javafx.fxml.FXML
+    private TextField articleTitleTF;
+    @javafx.fxml.FXML
+    private TextField keyFindingTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -29,7 +27,11 @@ public class CreateResearchProjectControllerRO
     public void researchOperationsHubButtonOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void createProjectButtonOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void saveEntryButtonOA(ActionEvent actionEvent) {
     }
 }

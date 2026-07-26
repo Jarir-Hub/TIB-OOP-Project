@@ -6,20 +6,17 @@ import javafx.scene.control.TableView;
 
 public class ResearchDashboardControllerRO
 {
+
     @javafx.fxml.FXML
-    private TableColumn estimatedBudgetTC;
+    private TableView literatureEntryTV;
     @javafx.fxml.FXML
-    private TableView researchTV;
+    private TableColumn leadAuthorTC;
     @javafx.fxml.FXML
-    private TableColumn projectIdTC;
+    private TableColumn articleTitleTC;
     @javafx.fxml.FXML
-    private TableColumn sectorTC;
+    private TableColumn dateAddedTC;
     @javafx.fxml.FXML
-    private TableColumn statusTC;
-    @javafx.fxml.FXML
-    private TableColumn projectTitleTC;
-    @javafx.fxml.FXML
-    private TableColumn startDateTC;
+    private TableColumn entryID;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -29,7 +26,11 @@ public class ResearchDashboardControllerRO
     public void researchOperationsHubButtonOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void startBewProjectButtonOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void addNewLiteratureButtonOA(ActionEvent actionEvent) {
     }
 }
