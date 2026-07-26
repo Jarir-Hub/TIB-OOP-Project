@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.DraftDashboardControllerRO">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Research Draft Dashboard">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="draftTV" layoutX="1.0" layoutY="93.0" prefHeight="323.0" prefWidth="750.0">
+         <columns>
+            <TableColumn fx:id="draftIdTC" prefWidth="112.47762453556061" text="Draft ID" />
+            <TableColumn fx:id="parentProjectTitleTC" minWidth="0.0" prefWidth="204.17911529541016" text="Parent Project Title" />
+            <TableColumn fx:id="draftTitleTC" prefWidth="199.16415405273438" text="Draft Title" />
+            <TableColumn fx:id="submissionDateTC" minWidth="0.0" prefWidth="128.23876953125" text="Submission Date" />
+            <TableColumn fx:id="statusTC" minWidth="0.0" prefWidth="105.3134765625" text="Status" />
+         </columns>
+      </TableView>
+      <Button layoutX="301.0" layoutY="556.0" mnemonicParsing="false" onAction="#researchOperationsHubButtonOA" prefHeight="50.0" prefWidth="170.0" text="Research Operations Hub" />
+      <Button layoutX="301.0" layoutY="482.0" mnemonicParsing="false" onAction="#submitNewDraftButtonOA" prefHeight="50.0" prefWidth="170.0" text="Submit New Draft" />
+   </children>
+</AnchorPane>

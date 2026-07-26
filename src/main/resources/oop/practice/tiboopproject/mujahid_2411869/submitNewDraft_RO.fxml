@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.SubmitNewDraftControllerRO">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Submit New Draft">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="300.0" layoutY="491.0" mnemonicParsing="false" onAction="#researchOperationsHubButtonOA" prefHeight="50.0" prefWidth="170.0" text="Research Operations Hub" />
+      <Button layoutX="480.0" layoutY="251.0" mnemonicParsing="false" onAction="#submitForApprovalButtonOA" prefHeight="50.0" prefWidth="170.0" text="Submit For Approval" />
+      <Text layoutX="505.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation Message" wrappingWidth="121.07148742675781" />
+      <Label fx:id="confirmationLabel" layoutX="470.0" layoutY="124.0" prefHeight="57.0" prefWidth="191.0" />
+      <Text layoutX="90.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Draft Title :" />
+      <Text layoutX="73.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select project :" />
+      <Text layoutX="55.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachment Link :" />
+      <Text layoutX="84.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summary :" />
+      <ComboBox fx:id="selectProjectCMB" layoutX="173.0" layoutY="168.0" prefWidth="150.0" />
+      <TextField fx:id="draftTitleTF" layoutX="173.0" layoutY="120.0" />
+      <TextField fx:id="attachmentLinkTF" layoutX="173.0" layoutY="218.0" />
+      <TextField fx:id="summaryTF" layoutX="173.0" layoutY="266.0" prefHeight="133.0" prefWidth="151.0" />
+   </children>
+</AnchorPane>
