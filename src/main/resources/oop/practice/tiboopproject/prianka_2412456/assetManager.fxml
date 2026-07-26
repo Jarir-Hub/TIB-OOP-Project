@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="893.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.prianka_2412456.AssetManagerController">
+   <children>
+      <AnchorPane prefHeight="893.0" prefWidth="852.0">
+         <children>
+            <Button layoutX="14.0" layoutY="187.0" mnemonicParsing="false" onAction="#logoutOA" style="-fx-background-color: pink;" text="log out" />
+            <Button layoutX="14.0" layoutY="116.0" mnemonicParsing="false" onAction="#logoutOA" style="-fx-background-color: pink;" text="Asset Procurement" />
+            <Button layoutX="14.0" layoutY="151.0" mnemonicParsing="false" onAction="#logoutOA" style="-fx-background-color: pink;" text="Master Inventory Board" />
+            <Line endX="10.666671752929688" endY="797.3333740234375" layoutX="154.0" layoutY="94.0" startX="10.666671752929688" startY="-3.5000076293945312" />
+            <TableView layoutX="180.0" layoutY="212.0" prefHeight="200.0" prefWidth="654.0">
+              <columns>
+                <TableColumn prefWidth="108.00001525878906" text="Name" />
+                <TableColumn prefWidth="117.33331298828125" text="Serial Number" />
+                  <TableColumn prefWidth="90.66668701171875" text="Cost" />
+                  <TableColumn prefWidth="93.33331298828125" text="Catagory" />
+                  <TableColumn prefWidth="120.0" text="Purchase Date" />
+                  <TableColumn prefWidth="73.33331298828125" text="status" />
+              </columns>
+            </TableView>
+            <Button layoutX="181.0" layoutY="423.0" mnemonicParsing="false" onAction="#RoleconfirmOA" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: orange;" text="Deploy Asset" />
+            <Button layoutX="689.0" layoutY="423.0" mnemonicParsing="false" onAction="#RoleconfirmOA" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: yellow;" text="Mark Damage" />
+            <Button layoutX="426.0" layoutY="125.0" mnemonicParsing="false" onAction="#filterOA" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: orange;" text="filter" />
+            <TextField layoutX="187.0" layoutY="125.0" prefHeight="25.0" prefWidth="221.0" promptText="search by name or serial no" />
+            <Button layoutX="264.0" layoutY="487.0" mnemonicParsing="false" onAction="#toggleOA" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: orange;" text="toggle " />
+            <Label layoutX="177.0" layoutY="491.0" text="change status" />
+            <Line endX="502.66668701171875" layoutX="347.0" layoutY="475.0" startX="-182.8333282470703" />
+            <Button layoutX="689.0" layoutY="128.0" mnemonicParsing="false" onAction="#toggleOA" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: skyblue;" text="Return asset" />
+            <TextField layoutX="187.0" layoutY="163.0" prefHeight="25.0" prefWidth="221.0" promptText="search by location" />
+            <Button layoutX="426.0" layoutY="163.0" mnemonicParsing="false" onAction="#filterOA" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: orange;" text="filter" />
+            <ComboBox layoutX="590.0" layoutY="487.0" prefHeight="25.0" prefWidth="132.0" />
+            <Label layoutX="500.0" layoutY="491.0" text="filter by  status" />
+            <Button layoutX="568.0" layoutY="527.0" mnemonicParsing="false" onAction="#toggleOA" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: orange;" text="confirm" />
+         </children>
+      </AnchorPane>
+      <Line endX="741.0" endY="-7.62939453125E-6" layoutX="111.0" layoutY="91.0" startX="-111.00000762939453" startY="-7.62939453125E-6" />
+      <Label layoutX="31.0" layoutY="33.0" prefHeight="39.0" prefWidth="175.0" text="Asset Manager">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

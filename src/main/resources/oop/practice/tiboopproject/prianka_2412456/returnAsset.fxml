@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.prianka_2412456.ReturnAssetController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="38.0" layoutY="45.0" text="asset condition status -" />
+            <Label fx:id="Output_pervConditionStatus" layoutX="38.0" layoutY="70.0" prefHeight="78.0" prefWidth="519.0" style="-fx-background-color: pink;" />
+            <Label layoutX="38.0" layoutY="162.0" text="Return Condition" />
+            <ComboBox fx:id="returnConditionCB" layoutX="140.0" layoutY="158.0" prefWidth="150.0" />
+            <Button layoutX="251.0" layoutY="211.0" mnemonicParsing="false" onAction="#confirmReturnOA" style="-fx-background-color: skyblue;" text="Confirm return" />
+            <Label fx:id="output_success" layoutX="115.0" layoutY="253.0" prefHeight="25.0" prefWidth="389.0" style="-fx-background-color: yellow;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

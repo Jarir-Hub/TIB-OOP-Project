@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.prianka_2412456.ChangePassController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="205.0" layoutY="226.0" mnemonicParsing="false" onAction="#confirmOA" text="confirm" />
+            <TextField layoutX="187.0" layoutY="99.0" />
+            <TextField layoutX="187.0" layoutY="157.0" />
+            <Label layoutX="55.0" layoutY="103.0" text="new password" />
+            <Label layoutX="55.0" layoutY="161.0" text="confirm new password" />
+            <Label fx:id="confirmationTF" layoutX="77.0" layoutY="303.0" prefHeight="25.0" prefWidth="453.0" text="Label" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

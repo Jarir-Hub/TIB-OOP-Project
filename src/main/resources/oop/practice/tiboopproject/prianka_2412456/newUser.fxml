@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.prianka_2412456.AddNewUserController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="57.0" layoutY="68.0" text="Account ID" />
+            <Label layoutX="65.0" layoutY="108.0" text="Name" />
+            <Label layoutX="59.0" layoutY="146.0" text="Username" />
+            <Label layoutX="381.0" layoutY="68.0" text="Role" />
+            <TextField fx:id="accTF" layoutX="132.0" layoutY="64.0" />
+            <TextField fx:id="nameTF" layoutX="132.0" layoutY="104.0" />
+            <TextField fx:id="usernameTF" layoutX="132.0" layoutY="142.0" />
+            <Label layoutX="377.0" layoutY="116.0" text="Status" />
+            <ComboBox fx:id="roleCB" layoutX="426.0" layoutY="64.0" prefWidth="150.0" />
+            <ComboBox fx:id="statusCB" layoutX="426.0" layoutY="112.0" prefWidth="150.0" />
+            <TextField fx:id="passTF" layoutX="132.0" layoutY="187.0" />
+            <Label layoutX="59.0" layoutY="191.0" text="password" />
+            <Button layoutX="256.0" layoutY="248.0" mnemonicParsing="false" onAction="#newOA" text="add neew user" />
+            <DatePicker fx:id="loginn" layoutX="426.0" layoutY="163.0" prefHeight="25.0" prefWidth="150.0" />
+            <Label layoutX="379.0" layoutY="167.0" text="login" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
