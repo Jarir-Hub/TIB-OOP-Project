@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="449.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+   <children>
+      <Label layoutX="241.0" layoutY="5.0" text="My Joined Campaigns" />
+      <Label layoutX="32.0" layoutY="55.0" prefHeight="30.0" prefWidth="331.0" text="Select a campaign from the table and click &quot;Mark Attendance&quot;." />
+      <TableView fx:id="joinedCampaignTableView" layoutX="32.0" layoutY="101.0" prefHeight="200.0" prefWidth="559.0">
+        <columns>
+          <TableColumn fx:id="campaignTitleColumn" prefWidth="133.5999755859375" text="Campaign Title" />
+          <TableColumn fx:id="dateColumn" prefWidth="140.00006103515625" text="Date" />
+            <TableColumn fx:id="locationColumn" prefWidth="147.199951171875" text="Location" />
+            <TableColumn fx:id="attendanceStatusColumn" prefWidth="141.60009765625" text="Attendance Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="32.0" layoutY="330.0" mnemonicParsing="false" onAction="#markAttendanceButton" text="Mark Attendance" />
+      <Button layoutX="376.0" layoutY="330.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="26.0" prefWidth="82.0" text="Refresh" />
+      <Button layoutX="241.0" layoutY="399.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="82.0" text="Back" />
+   </children>
+</AnchorPane>
