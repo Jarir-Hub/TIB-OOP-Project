@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.FieldOperationControllerRO">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Field Operation Dashboard">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="290.0" layoutY="599.0" mnemonicParsing="false" onAction="#researchOperationsHubButtonOA" prefHeight="50.0" prefWidth="170.0" text="Research Operations Hub" />
+      <Button layoutX="565.0" layoutY="166.0" mnemonicParsing="false" onAction="#saveEntryButtonOA" prefHeight="50.0" prefWidth="170.0" text="Save Entry" />
+      <Text layoutX="68.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Project :" />
+      <Text layoutX="42.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Observation Date :" />
+      <Text layoutX="66.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incident Type :" />
+      <Text layoutX="590.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation Message" wrappingWidth="121.07148742675781" />
+      <Text layoutX="72.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Field Notes :" />
+      <TextField fx:id="fieldNotesTF" layoutX="161.0" layoutY="246.0" prefHeight="67.0" prefWidth="151.0" />
+      <Label fx:id="confirmationLabel" layoutX="555.0" layoutY="50.0" prefHeight="57.0" prefWidth="191.0" />
+      <TableView fx:id="fieldOperationTV" layoutY="325.0" prefHeight="261.0" prefWidth="744.0">
+         <columns>
+            <TableColumn fx:id="observationIdTC" prefWidth="118.20895540714264" text="Observation ID" />
+            <TableColumn fx:id="associatedProjectTC" minWidth="0.0" prefWidth="174.80599212646484" text="Associated Project" />
+            <TableColumn fx:id="locationTC" prefWidth="133.2537841796875" text="Location" />
+            <TableColumn fx:id="incidentTypeTC" prefWidth="126.80606079101562" text="Incident Type" />
+            <TableColumn fx:id="notesTC" prefWidth="191.99993896484375" text="Notes" />
+         </columns>
+      </TableView>
+      <ComboBox fx:id="selectProjectCMB" layoutX="163.0" layoutY="79.0" prefWidth="150.0" />
+      <ComboBox fx:id="incidentTypeCMB" layoutX="163.0" layoutY="117.0" prefWidth="150.0" />
+      <DatePicker fx:id="observationDateDP" layoutX="163.0" layoutY="161.0" prefHeight="26.0" prefWidth="150.0" />
+      <Text layoutX="87.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location :" />
+      <TextField fx:id="locationTF" layoutX="162.0" layoutY="203.0" prefHeight="17.0" prefWidth="151.0" />
+   </children>
+</AnchorPane>

@@ -1,25 +1,21 @@
 package oop.practice.tiboopproject.mujahid_2411869;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class CreateResearchProjectControllerRO
+public class AddNewLiteracyControllerRO
 {
+    @javafx.fxml.FXML
+    private TextField sourceUrlTF;
     @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
-    private TextField projectTitleTF;
+    private TextField leadAuthorTF;
     @javafx.fxml.FXML
-    private ComboBox sectorCMB;
+    private TextField articleTitleTF;
     @javafx.fxml.FXML
-    private TextField leadResearcherTF;
-    @javafx.fxml.FXML
-    private TextField estimatedBudgetTF;
-    @javafx.fxml.FXML
-    private DatePicker startDateDP;
+    private TextField keyFindingTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -30,7 +26,6 @@ public class CreateResearchProjectControllerRO
     }
 
     @javafx.fxml.FXML
-    public void createProjectButtonOA(ActionEvent actionEvent) {
+    public void saveEntryButtonOA(ActionEvent actionEvent) {
     }
-
 }
