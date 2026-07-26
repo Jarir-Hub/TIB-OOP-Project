@@ -6,28 +6,28 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class ScheduleNewMeetingViewED
+public class NewRoadmapControllerED
 {
     @javafx.fxml.FXML
-    private DatePicker meetingDateDP;
+    private TextField jeyMilestonesTF;
+    @javafx.fxml.FXML
+    private TextField focusAreaTF;
     @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
-    private TextField meetingTitleTF;
+    private ComboBox fiscalYearCMB;
     @javafx.fxml.FXML
-    private ComboBox participantsCMB;
-    @javafx.fxml.FXML
-    private TextField agendaPointsTF;
+    private DatePicker completionDateDP;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
+    public void finalizeRoadmapButtonOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void saveMeetingButtonOA(ActionEvent actionEvent) {
+    public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
     }
 }

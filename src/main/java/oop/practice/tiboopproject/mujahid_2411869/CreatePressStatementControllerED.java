@@ -5,7 +5,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class CreatePressStatementViewED
+public class CreatePressStatementControllerED
 {
     @javafx.fxml.FXML
     private DatePicker releasedDateDP;

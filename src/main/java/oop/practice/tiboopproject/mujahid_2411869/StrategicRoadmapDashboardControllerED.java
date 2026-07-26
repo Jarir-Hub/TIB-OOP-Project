@@ -4,27 +4,27 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class ManageExecutiveTaskDashboardViewED
+public class StrategicRoadmapDashboardControllerED
 {
     @javafx.fxml.FXML
-    private TableColumn priorityLevelTC;
+    private TableView strategyTV;
     @javafx.fxml.FXML
-    private TableView executiveTaskTV;
+    private TableColumn focusAreaTC;
     @javafx.fxml.FXML
-    private TableColumn dueDateTC;
-    @javafx.fxml.FXML
-    private TableColumn titleTC;
-    @javafx.fxml.FXML
-    private TableColumn taskIdTC;
+    private TableColumn fiscalYearTC;
     @javafx.fxml.FXML
     private TableColumn statusTC;
+    @javafx.fxml.FXML
+    private TableColumn roadmapIdTC;
+    @javafx.fxml.FXML
+    private TableColumn targetDateTC;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void addNewTaskButtonOA(ActionEvent actionEvent) {
+    public void defineNewRoadmapButtonOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

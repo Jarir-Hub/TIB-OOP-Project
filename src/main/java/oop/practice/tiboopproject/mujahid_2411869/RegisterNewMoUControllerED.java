@@ -2,19 +2,20 @@ package oop.practice.tiboopproject.mujahid_2411869;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AnnouncementCreationViewED
+public class RegisterNewMoUControllerED
 {
     @javafx.fxml.FXML
-    private ComboBox targetAudienceCMB;
+    private TextField durationTF;
     @javafx.fxml.FXML
-    private TextField messageBodyTF;
+    private ComboBox mouDomainCMB;
     @javafx.fxml.FXML
-    private TextField announcementTitleTF;
+    private TextField partnerOrganizationNameTF;
     @javafx.fxml.FXML
-    private TextField authorNameTF;
+    private DatePicker expiaryDateDP;
     @javafx.fxml.FXML
     private Label confirmationLabel;
 
@@ -23,7 +24,7 @@ public class AnnouncementCreationViewED
     }
 
     @javafx.fxml.FXML
-    public void sendAnnouncementButtonOA(ActionEvent actionEvent) {
+    public void registerNewMoUButtonOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

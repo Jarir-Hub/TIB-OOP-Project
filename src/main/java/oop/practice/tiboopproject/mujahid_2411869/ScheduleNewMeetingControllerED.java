@@ -6,18 +6,18 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AddNewTaskViewED
+public class ScheduleNewMeetingControllerED
 {
+    @javafx.fxml.FXML
+    private DatePicker meetingDateDP;
     @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
-    private ComboBox priorityLevelCMB;
+    private TextField meetingTitleTF;
     @javafx.fxml.FXML
-    private TextField taskTitleTF;
+    private ComboBox participantsCMB;
     @javafx.fxml.FXML
-    private TextField taskNotesTF;
-    @javafx.fxml.FXML
-    private DatePicker dueDateDP;
+    private TextField agendaPointsTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -28,6 +28,6 @@ public class AddNewTaskViewED
     }
 
     @javafx.fxml.FXML
-    public void saveTaskButtonOA(ActionEvent actionEvent) {
+    public void saveMeetingButtonOA(ActionEvent actionEvent) {
     }
 }

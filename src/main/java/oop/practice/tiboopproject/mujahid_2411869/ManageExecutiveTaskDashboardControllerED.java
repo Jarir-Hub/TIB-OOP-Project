@@ -4,30 +4,30 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class PressStatementDashboardViewED
+public class ManageExecutiveTaskDashboardControllerED
 {
     @javafx.fxml.FXML
-    private TableColumn statementIdTC;
+    private TableColumn priorityLevelTC;
     @javafx.fxml.FXML
-    private TableColumn authorTC;
+    private TableView executiveTaskTV;
     @javafx.fxml.FXML
-    private TableView pressStatementTV;
+    private TableColumn dueDateTC;
     @javafx.fxml.FXML
     private TableColumn titleTC;
     @javafx.fxml.FXML
-    private TableColumn associatedIssueTC;
+    private TableColumn taskIdTC;
     @javafx.fxml.FXML
-    private TableColumn dateReleasedTC;
+    private TableColumn statusTC;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
+    public void addNewTaskButtonOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void createPressStatementButtonOA(ActionEvent actionEvent) {
+    public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
     }
 }

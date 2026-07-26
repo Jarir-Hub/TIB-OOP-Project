@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class MoUDashboardViewED
+public class MoUDashboardControllerED
 {
     @javafx.fxml.FXML
     private TableView mouTV;

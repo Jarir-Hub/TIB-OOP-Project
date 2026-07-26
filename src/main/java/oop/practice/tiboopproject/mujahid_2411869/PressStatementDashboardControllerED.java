@@ -4,30 +4,30 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class StrategicRoadmapDashboardViewED
+public class PressStatementDashboardControllerED
 {
     @javafx.fxml.FXML
-    private TableView strategyTV;
+    private TableColumn statementIdTC;
     @javafx.fxml.FXML
-    private TableColumn focusAreaTC;
+    private TableColumn authorTC;
     @javafx.fxml.FXML
-    private TableColumn fiscalYearTC;
+    private TableView pressStatementTV;
     @javafx.fxml.FXML
-    private TableColumn statusTC;
+    private TableColumn titleTC;
     @javafx.fxml.FXML
-    private TableColumn roadmapIdTC;
+    private TableColumn associatedIssueTC;
     @javafx.fxml.FXML
-    private TableColumn targetDateTC;
+    private TableColumn dateReleasedTC;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void defineNewRoadmapButtonOA(ActionEvent actionEvent) {
+    public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
+    public void createPressStatementButtonOA(ActionEvent actionEvent) {
     }
 }

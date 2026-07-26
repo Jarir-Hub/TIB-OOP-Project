@@ -4,24 +4,20 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class MeetingDashboardViewED
+public class AnnouncementDashboardControllerED
 {
     @javafx.fxml.FXML
-    private TableView meetingTV;
+    private TableColumn targetAudienceTC;
     @javafx.fxml.FXML
-    private TableColumn scheduledDateTC;
+    private TableView executiveAnnouncementTV;
     @javafx.fxml.FXML
     private TableColumn authorNameTC;
     @javafx.fxml.FXML
-    private TableColumn meetingIdTC;
+    private TableColumn announcementIdTC;
     @javafx.fxml.FXML
-    private TableColumn participantCountTC;
+    private TableColumn announcementTitleTC;
     @javafx.fxml.FXML
-    private TableColumn statusTC;
-    @javafx.fxml.FXML
-    private TableColumn scheduledTimeTC;
-    @javafx.fxml.FXML
-    private TableColumn meetingTimeTC;
+    private TableColumn announcementDateTC;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -32,6 +28,6 @@ public class MeetingDashboardViewED
     }
 
     @javafx.fxml.FXML
-    public void scheduleNewMeetingButtonOA(ActionEvent actionEvent) {
+    public void newAnnouncementButtonOA(ActionEvent actionEvent) {
     }
 }

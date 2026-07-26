@@ -2,32 +2,31 @@ package oop.practice.tiboopproject.mujahid_2411869;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class PolicyCreationViewED
+public class AnnouncementCreationControllerED
 {
     @javafx.fxml.FXML
-    private ComboBox categoryCMB;
+    private ComboBox targetAudienceCMB;
     @javafx.fxml.FXML
-    private TextField policyNameTF;
+    private TextField messageBodyTF;
     @javafx.fxml.FXML
-    private TextField policyDescriptionTF;
+    private TextField announcementTitleTF;
+    @javafx.fxml.FXML
+    private TextField authorNameTF;
     @javafx.fxml.FXML
     private Label confirmationLabel;
-    @javafx.fxml.FXML
-    private DatePicker effectiveDateDP;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
+    public void sendAnnouncementButtonOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void publishPolicyButtonOA(ActionEvent actionEvent) {
+    public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
     }
 }

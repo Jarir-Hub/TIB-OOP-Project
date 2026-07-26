@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class PolicyDashboardViewED
+public class PolicyDashboardControllerED
 {
     @javafx.fxml.FXML
     private TableColumn policyNameTC;

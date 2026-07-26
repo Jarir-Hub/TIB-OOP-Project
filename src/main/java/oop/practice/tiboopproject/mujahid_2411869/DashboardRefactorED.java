@@ -2,7 +2,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 
 import javafx.event.ActionEvent;
 
-public class DashboardViewED
+public class DashboardRefactorED
 {
     @javafx.fxml.FXML
     public void initialize() {
