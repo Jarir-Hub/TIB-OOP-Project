@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="612.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.RajiyaSultanaMohona_2431026.GenerateComplaintReport">
+   <children>
+      <Label layoutX="55.0" layoutY="54.0" prefHeight="18.0" prefWidth="170.0" text="Generate Complaint Report" />
+      <Label layoutX="55.0" layoutY="104.0" prefHeight="18.0" prefWidth="141.0" text="Select Report Type" />
+      <ComboBox fx:id="reportTypeComboBox" layoutX="51.0" layoutY="142.0" prefWidth="150.0" />
+      <Label layoutX="354.0" layoutY="46.0" prefHeight="18.0" prefWidth="170.0" text="From Date" />
+      <DatePicker fx:id="romDatePickertoDatePicker" layoutX="518.0" layoutY="42.0" />
+      <TableView fx:id="reportTableView" layoutX="14.0" layoutY="192.0" prefHeight="200.0" prefWidth="690.0">
+        <columns>
+          <TableColumn fx:id="complaintIdColumn" prefWidth="139.19998741149902" text="Complaint ID" />
+          <TableColumn fx:id="titleColumn" prefWidth="147.99993896484375" text="Complaint Title" />
+            <TableColumn fx:id="citizenColumn" minWidth="0.0" prefWidth="124.800048828125" text="Citizen Name" />
+            <TableColumn fx:id="statusColumn" prefWidth="134.39999389648438" text="Status" />
+            <TableColumn fx:id="dateColumn" prefWidth="137.59991455078125" text="Submission Datebutt" />
+        </columns>
+      </TableView>
+      <Button layoutX="64.0" layoutY="422.0" mnemonicParsing="false" onAction="#generateReportButton" prefHeight="26.0" prefWidth="128.0" text="Generate Report" />
+      <Button layoutX="74.0" layoutY="472.0" mnemonicParsing="false" onAction="#exportButton" text="Export" />
+      <Button layoutX="74.0" layoutY="526.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+   </children>
+</AnchorPane>
