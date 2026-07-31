@@ -8,11 +8,11 @@ import javafx.scene.control.TextField;
 public class SubmitNewDraftControllerRO
 {
     @javafx.fxml.FXML
+    private Label confirmationLabel;
+    @javafx.fxml.FXML
     private TextField draftTitleTF;
     @javafx.fxml.FXML
     private TextField summaryTF;
-    @javafx.fxml.FXML
-    private Label confirmationLabel;
     @javafx.fxml.FXML
     private TextField attachmentLinkTF;
     @javafx.fxml.FXML
@@ -28,5 +28,9 @@ public class SubmitNewDraftControllerRO
 
     @javafx.fxml.FXML
     public void submitForApprovalButtonOA(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void saveMilestoneButtonOA(ActionEvent actionEvent) {
     }
 }

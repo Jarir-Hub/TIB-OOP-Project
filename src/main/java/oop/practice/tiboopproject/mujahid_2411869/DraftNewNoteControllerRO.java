@@ -4,18 +4,16 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AddNewLiteracyControllerRO
+public class DraftNewNoteControllerRO
 {
+    @javafx.fxml.FXML
+    private TextField locationTF;
+    @javafx.fxml.FXML
+    private TextField noteSubjectTF;
     @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
-    private TextField sourceUrlTF;
-    @javafx.fxml.FXML
-    private TextField leadAuthorTF;
-    @javafx.fxml.FXML
-    private TextField articleTitleTF;
-    @javafx.fxml.FXML
-    private TextField keyFindingTF;
+    private TextField detailedObservationTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -26,10 +24,6 @@ public class AddNewLiteracyControllerRO
     }
 
     @javafx.fxml.FXML
-    public void saveEntryButtonOA(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
     public void archiveNoteButtonOA(ActionEvent actionEvent) {
     }
 }

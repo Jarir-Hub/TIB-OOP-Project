@@ -1,21 +1,23 @@
 package oop.practice.tiboopproject.mujahid_2411869;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AddNewLiteracyControllerRO
+public class CreateNewSurveyControllerRO
 {
+    @javafx.fxml.FXML
+    private TextField questionnaireContentTF;
+    @javafx.fxml.FXML
+    private ComboBox targetDemographicCMB;
     @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
-    private TextField sourceUrlTF;
+    private TextField surveyTitleTF;
     @javafx.fxml.FXML
-    private TextField leadAuthorTF;
-    @javafx.fxml.FXML
-    private TextField articleTitleTF;
-    @javafx.fxml.FXML
-    private TextField keyFindingTF;
+    private DatePicker expiryDateDP;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -26,10 +28,6 @@ public class AddNewLiteracyControllerRO
     }
 
     @javafx.fxml.FXML
-    public void saveEntryButtonOA(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void archiveNoteButtonOA(ActionEvent actionEvent) {
+    public void saveSurveyDesignButtonOA(ActionEvent actionEvent) {
     }
 }

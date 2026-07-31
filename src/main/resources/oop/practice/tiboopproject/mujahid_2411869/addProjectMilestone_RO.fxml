@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.AddProjectMilestoneControllerRO">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Add Project Milestone">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="300.0" layoutY="491.0" mnemonicParsing="false" onAction="#researchOperationsHubButtonOA" prefHeight="50.0" prefWidth="170.0" text="Research Operations Hub" />
+      <Button layoutX="480.0" layoutY="251.0" mnemonicParsing="false" onAction="#saveMilestoneButtonOA" prefHeight="50.0" prefWidth="170.0" text="Save Milestone" />
+      <Text layoutX="505.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation Message" wrappingWidth="121.07148742675781" />
+      <Label fx:id="confirmationLabel" layoutX="470.0" layoutY="124.0" prefHeight="57.0" prefWidth="191.0" />
+      <Text layoutX="66.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Milestone Name :" />
+      <Text layoutX="53.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Associated Project :" />
+      <Text layoutX="67.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Target Deadline :" />
+      <Text layoutX="36.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Milestone Description :" />
+      <ComboBox fx:id="associatedProjectCMB" layoutX="173.0" layoutY="168.0" prefWidth="150.0" />
+      <TextField fx:id="milestoneNameTF" layoutX="173.0" layoutY="120.0" />
+      <TextField fx:id="milestoneDescriptionTF" layoutX="173.0" layoutY="266.0" prefHeight="133.0" prefWidth="151.0" />
+      <DatePicker fx:id="targetDeadlineDP" layoutX="172.0" layoutY="219.0" prefHeight="26.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
