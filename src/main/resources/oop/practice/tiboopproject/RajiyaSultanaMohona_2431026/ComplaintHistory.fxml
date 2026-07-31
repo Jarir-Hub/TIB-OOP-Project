@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="642.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.RajiyaSultanaMohona_2431026.ComplaintHistory">
+   <children>
+      <Label layoutX="35.0" layoutY="36.0" prefHeight="18.0" prefWidth="119.0" text="Complaint History" />
+      <Label fx:id="statusComboBox" layoutX="31.0" layoutY="75.0" prefHeight="18.0" prefWidth="106.0" text="Search by Status" />
+      <ComboBox layoutX="154.0" layoutY="72.0" prefWidth="150.0" />
+      <TableView fx:id="historyTable" layoutX="10.0" layoutY="129.0" prefHeight="200.0" prefWidth="741.0">
+        <columns>
+          <TableColumn fx:id="complaintIdColumn" prefWidth="150.3999878168106" text="Complaint ID" />
+          <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="160.0" text="Complaint Title" />
+            <TableColumn fx:id="categoryColumn" prefWidth="152.0" text="Category" />
+            <TableColumn fx:id="dateColumn" prefWidth="149.59994506835938" text="Submission Date" />
+            <TableColumn fx:id="statusColumn" prefWidth="128.79995117187502" text="Current Status" />
+        </columns>
+      </TableView>
+      <Label layoutX="10.0" layoutY="379.0" prefHeight="18.0" prefWidth="178.0" text="Selected Complaint Details" />
+      <TextArea fx:id="detailsTextArea" layoutX="176.0" layoutY="355.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="459.0" layoutY="385.0" mnemonicParsing="false" onAction="#searchButton" prefHeight="26.0" prefWidth="88.0" text="Search" />
+      <Button layoutX="474.0" layoutY="442.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="26.0" prefWidth="94.0" text="Refresh" />
+      <Button layoutX="477.0" layoutY="505.0" mnemonicParsing="false" onAction="#backbutton" text="Back" />
+   </children>
+</AnchorPane>
