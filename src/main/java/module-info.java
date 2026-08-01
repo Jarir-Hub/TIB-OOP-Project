@@ -7,4 +7,6 @@ module oop.practice.tiboopproject {
     exports oop.practice.tiboopproject;
     exports Jarir_Bin_Rakib;
     opens Jarir_Bin_Rakib to javafx.fxml;
+    exports user;
+    opens user to javafx.fxml;
 }

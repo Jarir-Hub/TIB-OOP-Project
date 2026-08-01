@@ -1,4 +1,4 @@
-package oop.practice.tiboopproject;
+package user;
 
 public abstract class User {
     protected String userId, name, email, password, designation;
