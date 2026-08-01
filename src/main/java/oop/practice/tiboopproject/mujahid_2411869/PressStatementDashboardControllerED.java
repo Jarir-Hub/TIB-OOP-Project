@@ -3,6 +3,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class PressStatementDashboardControllerED
 {
@@ -18,6 +19,8 @@ public class PressStatementDashboardControllerED
     private TableColumn associatedIssueTC;
     @javafx.fxml.FXML
     private TableColumn dateReleasedTC;
+    @javafx.fxml.FXML
+    private AnchorPane pressStatementDashboardAP;
 
     @javafx.fxml.FXML
     public void initialize() {

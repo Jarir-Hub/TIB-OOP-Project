@@ -3,6 +3,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class MeetingDashboardControllerED
 {
@@ -17,11 +18,13 @@ public class MeetingDashboardControllerED
     @javafx.fxml.FXML
     private TableColumn participantCountTC;
     @javafx.fxml.FXML
-    private TableColumn statusTC;
-    @javafx.fxml.FXML
     private TableColumn scheduledTimeTC;
     @javafx.fxml.FXML
     private TableColumn meetingTimeTC;
+    @javafx.fxml.FXML
+    private AnchorPane meetingDashboardAP;
+    @javafx.fxml.FXML
+    private TableColumn announcementDateTC21;
 
     @javafx.fxml.FXML
     public void initialize() {

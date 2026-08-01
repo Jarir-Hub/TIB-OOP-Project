@@ -3,6 +3,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class ManageExecutiveTaskDashboardControllerED
 {
@@ -18,6 +19,8 @@ public class ManageExecutiveTaskDashboardControllerED
     private TableColumn taskIdTC;
     @javafx.fxml.FXML
     private TableColumn statusTC;
+    @javafx.fxml.FXML
+    private AnchorPane manageExecutiveTaskAP;
 
     @javafx.fxml.FXML
     public void initialize() {

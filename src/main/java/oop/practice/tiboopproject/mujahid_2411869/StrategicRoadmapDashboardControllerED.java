@@ -3,6 +3,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class StrategicRoadmapDashboardControllerED
 {
@@ -18,6 +19,8 @@ public class StrategicRoadmapDashboardControllerED
     private TableColumn roadmapIdTC;
     @javafx.fxml.FXML
     private TableColumn targetDateTC;
+    @javafx.fxml.FXML
+    private AnchorPane strategicRoadmapAP;
 
     @javafx.fxml.FXML
     public void initialize() {
