@@ -6,7 +6,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="455.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
    <children>
       <Label layoutX="211.0" layoutY="5.0" text="Update Volunteer Profile" />
@@ -24,7 +23,6 @@
       <ComboBox fx:id="districtComboBox" layoutX="129.0" layoutY="276.0" prefWidth="150.0" />
       <Label layoutX="44.0" layoutY="327.0" text="New Password:" />
       <TextField fx:id="newPasswordTextField" layoutX="130.0" layoutY="323.0" />
-      <Button layoutX="104.0" layoutY="375.0" mnemonicParsing="false" onAction="#updateProfileButton" text="Update Profile" />
-      <Button layoutX="386.0" layoutY="375.0" mnemonicParsing="false" onAction="#cancelButton" text="Cancel" />
+      <Button layoutX="266.0" layoutY="381.0" mnemonicParsing="false" onAction="#updateProfileButton" text="Update Profile" />
    </children>
 </AnchorPane>
