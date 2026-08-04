@@ -35,7 +35,7 @@ public class DashBoardController
     @javafx.fxml.FXML
     public void changeViewinDifferentWindow(ActionEvent actionEvent) {
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("my_campaigns.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("campaign_coordinator_my_campaigns.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage astage=new Stage();
             astage.setTitle("TIB Simulator");
