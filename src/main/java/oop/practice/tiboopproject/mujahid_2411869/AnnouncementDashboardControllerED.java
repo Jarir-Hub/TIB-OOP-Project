@@ -3,6 +3,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class AnnouncementDashboardControllerED
 {
@@ -18,6 +19,8 @@ public class AnnouncementDashboardControllerED
     private TableColumn announcementTitleTC;
     @javafx.fxml.FXML
     private TableColumn announcementDateTC;
+    @javafx.fxml.FXML
+    private AnchorPane announcementDashboardAP;
 
     @javafx.fxml.FXML
     public void initialize() {

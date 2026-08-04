@@ -3,6 +3,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class MoUDashboardControllerED
 {
@@ -20,6 +21,8 @@ public class MoUDashboardControllerED
     private TableColumn statusTC;
     @javafx.fxml.FXML
     private TableColumn mouIdTC;
+    @javafx.fxml.FXML
+    private AnchorPane mouDashboardAP;
 
     @javafx.fxml.FXML
     public void initialize() {

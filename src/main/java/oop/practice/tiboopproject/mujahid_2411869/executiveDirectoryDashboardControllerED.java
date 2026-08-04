@@ -1,9 +1,13 @@
 package oop.practice.tiboopproject.mujahid_2411869;
 
 import javafx.event.ActionEvent;
+import javafx.scene.layout.AnchorPane;
 
-public class DashboardRefactorED
+public class executiveDirectoryDashboardControllerED
 {
+    @javafx.fxml.FXML
+    private AnchorPane executiveDirectoryAP;
+
     @javafx.fxml.FXML
     public void initialize() {
     }

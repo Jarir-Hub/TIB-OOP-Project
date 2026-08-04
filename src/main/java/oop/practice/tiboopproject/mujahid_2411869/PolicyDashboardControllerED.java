@@ -3,6 +3,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 public class PolicyDashboardControllerED
 {
@@ -18,6 +19,8 @@ public class PolicyDashboardControllerED
     private TableView policyTV;
     @javafx.fxml.FXML
     private TableColumn effectiveDateTC;
+    @javafx.fxml.FXML
+    private AnchorPane policyDashboardAP;
 
     @javafx.fxml.FXML
     public void initialize() {
