@@ -1,9 +1,8 @@
 package oop.practice.tiboopproject.prianka_2412456;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import prianka_2412456.Asset;
 
 public class ReturnAssetController {
 
@@ -18,11 +17,11 @@ public class ReturnAssetController {
     @javafx.fxml.FXML
     private TableColumn assignTF;
     @javafx.fxml.FXML
-    private TableView tablecolLocation;
+    private TableView<Asset> tablecolLocation;
     @javafx.fxml.FXML
-    private TableColumn assetIDTF;
+    private TableColumn<Asset, Integer> assetIDTF;
     @javafx.fxml.FXML
-    private TableColumn statusTF;
+    private TableColumn<Asset, Boolean> statusTF;
 
     @Deprecated
     public void confirmReturnOA(ActionEvent actionEvent) {

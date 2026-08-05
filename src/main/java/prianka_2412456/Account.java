@@ -13,6 +13,8 @@ public class Account {
     private  LocalDate lastLogin;
     private boolean mustChangePassword;
 
+    // constructor
+
     public Account(String accountId, String name, String username, String password, String role, String status, LocalDate lastLogin, boolean mustChangePassword) {
 
         this.accountId = accountId;
@@ -24,6 +26,8 @@ public class Account {
         this.lastLogin = lastLogin;
         this.mustChangePassword = mustChangePassword;
     }
+
+    // getter and setter
 
     public String getAccountId() {
         return accountId;
@@ -88,4 +92,25 @@ public class Account {
     public void setMustChangePassword(boolean mustChangePassword) {
         this.mustChangePassword = mustChangePassword;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountId='" + accountId + '\'' +
+                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", status='" + status + '\'' +
+                ", lastLogin=" + lastLogin +
+                ", mustChangePassword=" + mustChangePassword +
+                '}';
+    }
+
+    public static boolean ValidateUsernameUnique(String username){
+
+        if (username == null || username.isBlank()) return false;
+
+    }
+
 }

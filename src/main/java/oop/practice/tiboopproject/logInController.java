@@ -79,6 +79,9 @@ public class logInController
         user = searchUser("StrategicDirectorInfo.bin", id, password);
         if(user != null) return user;
 
+        user = searchUser("AssetManager.bin", id, password);
+        if(user != null) return user;
+
         user = searchUser("ITSupportOfficerInfo.bin", id, password);
         if(user != null) return user;
 
