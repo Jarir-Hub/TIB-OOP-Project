@@ -1,8 +1,13 @@
 package oop.practice.tiboopproject;
 
+import Jarir_Bin_Rakib_2431984.Volunteer;
+import Jarir_Bin_Rakib_2431984.Volunteer_DashBoard_Controller;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -100,7 +105,20 @@ public class logInController
             al.showAndWait();
         }
         else if (user.getUserType().equals("Volunteer")){
-            //volunteer fxml
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/JarirBinRakib_2431984/Volunteer_DashBoard.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage newStage=new Stage();
+                newStage.setTitle("Volunteer DashBoard");
+                newStage.setScene(scene);
+                Volunteer_DashBoard_Controller nextController=fxmlLoader.getController();
+                nextController.receiveObjectFromLoginController(Integer.parseInt(idTextField.getText()));
+                newStage.show();
+            }
+            catch (Exception e){
+                //
+            }
+
         }
         else if (user.getUserType().equals("Write your user here")){
             //show your user fxml
