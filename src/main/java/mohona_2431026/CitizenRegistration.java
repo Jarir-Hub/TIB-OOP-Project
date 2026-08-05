@@ -42,3 +42,4 @@ public class CitizenRegistration
     public void confirmPasswordField(ActionEvent actionEvent) {
     }
 }
+

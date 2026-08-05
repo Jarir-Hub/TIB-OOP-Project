@@ -34,7 +34,7 @@ public class ComplaintHistory
     }
 
     @javafx.fxml.FXML
-    public void searchButton(ActionEvent actionEvent) {
+    public void searchButton(                   ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
