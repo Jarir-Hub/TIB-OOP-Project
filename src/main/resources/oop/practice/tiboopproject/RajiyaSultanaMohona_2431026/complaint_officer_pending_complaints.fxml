@@ -6,21 +6,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mohona_2431026.Pending_Complaints_Cont">
    <children>
       <Label layoutX="265.0" layoutY="14.0" text="Pending Complaints" />
       <Label layoutX="28.0" layoutY="63.0" text="Complaints currently awaiting review" />
-      <TableView layoutX="41.0" layoutY="107.0" prefHeight="200.0" prefWidth="514.0">
+      <TableView fx:id="tableviewfxid" layoutX="41.0" layoutY="107.0" prefHeight="200.0" prefWidth="514.0">
         <columns>
-          <TableColumn prefWidth="142.4000244140625" text="Complaint ID" />
-          <TableColumn prefWidth="112.79998779296875" text="Complaint Title" />
-            <TableColumn prefWidth="127.20001220703125" text="Submission Date" />
-            <TableColumn prefWidth="132.79998779296875" text="Citizen Name" />
+          <TableColumn fx:id="complaintidcolumn" prefWidth="142.4000244140625" text="Complaint ID" />
+          <TableColumn fx:id="complaintitlecolumn" prefWidth="112.79998779296875" text="Complaint Title" />
+            <TableColumn fx:id="submissiondatecolumn" prefWidth="127.20001220703125" text="Submission Date" />
+            <TableColumn fx:id="citizennamecolumn" prefWidth="132.79998779296875" text="Citizen Name" />
         </columns>
       </TableView>
-      <Button layoutX="57.0" layoutY="324.0" mnemonicParsing="false" text="Refresh" />
-      <Button layoutX="223.0" layoutY="324.0" mnemonicParsing="false" text="View  Details" />
-      <Button layoutX="429.0" layoutY="324.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="57.0" layoutY="324.0" mnemonicParsing="false" onAction="#refreshonaction" text="Refresh" />
+      <Button layoutX="223.0" layoutY="324.0" mnemonicParsing="false" onAction="#buttonviredetails" text="View  Details" />
+      <Button layoutX="429.0" layoutY="324.0" mnemonicParsing="false" onAction="#backbutton" text="Back" />
    </children>
 </AnchorPane>

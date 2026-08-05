@@ -7,8 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="648.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.RajiyaSultanaMohona_2431026.UpdateComplaintStatus">
+<AnchorPane prefHeight="648.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mohona_2431026.UpdateComplaintStatus">
    <children>
       <TableView fx:id="complaintTable" layoutX="3.0" layoutY="130.0" prefHeight="200.0" prefWidth="701.0">
         <columns>
@@ -18,7 +17,7 @@
             <TableColumn fx:id="statusColumn" prefWidth="194.39993286132812" text="Current Status" />
         </columns>
       </TableView>
-      <Label layoutX="46.0" layoutY="28.0" prefHeight="18.0" prefWidth="167.0" text="Update Complaint Status" />
+      <Label layoutX="250.0" layoutY="14.0" prefHeight="18.0" prefWidth="167.0" text="Update Complaint Status" />
       <Label layoutX="32.0" layoutY="374.0" prefHeight="18.0" prefWidth="100.0" text="New Statusbut" />
       <Button layoutX="519.0" layoutY="404.0" mnemonicParsing="false" onAction="#updateStatusButton" text="Update Status" />
       <Button layoutX="519.0" layoutY="464.0" mnemonicParsing="false" onAction="#backButton" text="back" />
