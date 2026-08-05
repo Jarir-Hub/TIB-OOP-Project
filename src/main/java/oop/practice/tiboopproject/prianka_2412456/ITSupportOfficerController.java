@@ -5,12 +5,13 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import prianka_2412456.ITSupportOfficer;
 
 public class ITSupportOfficerController {
     @javafx.fxml.FXML
-    private TableColumn usernameCOL;
+    private TableColumn<String, ITSupportOfficer> usernameCOL;
     @javafx.fxml.FXML
-    private TableView tablecol;
+    private TableView<ITSupportOfficer> tablecol;
     @javafx.fxml.FXML
     private TableColumn statusCOL;
     @javafx.fxml.FXML
