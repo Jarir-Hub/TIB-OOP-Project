@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="612.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.RajiyaSultanaMohona_2431026.GenerateComplaintReport">
+<AnchorPane prefHeight="612.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mohona_2431026.GenerateComplaintReport">
    <children>
       <Label layoutX="55.0" layoutY="54.0" prefHeight="18.0" prefWidth="170.0" text="Generate Complaint Report" />
       <Label layoutX="55.0" layoutY="104.0" prefHeight="18.0" prefWidth="141.0" text="Select Report Type" />

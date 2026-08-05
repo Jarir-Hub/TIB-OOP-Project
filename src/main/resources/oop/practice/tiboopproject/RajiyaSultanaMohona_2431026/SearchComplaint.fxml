@@ -7,10 +7,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="688.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="688.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mohona_2431026.searchcomplain">
    <children>
-      <Label fx:id="titleLabel" layoutX="29.0" layoutY="48.0" prefHeight="18.0" prefWidth="101.0" text="titleLabel" />
+      <Label layoutX="295.0" layoutY="14.0" prefHeight="18.0" prefWidth="101.0" text="search complain" />
       <Label fx:id="complaintIdLabel" layoutX="29.0" layoutY="91.0" prefHeight="18.0" prefWidth="127.0" text="Complaint ID" />
       <TextField fx:id="complaintIdTextField" layoutX="145.0" layoutY="78.0" />
       <Button layoutX="455.0" layoutY="45.0" mnemonicParsing="false" onAction="#searchButton" text="search" />

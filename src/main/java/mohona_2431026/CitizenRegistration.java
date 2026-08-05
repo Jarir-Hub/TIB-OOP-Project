@@ -1,3 +1,8 @@
+package mohona_2431026;
+
+import javafx.event.ActionEvent;
+import javafx.scene.control.TextField;
+
 public class CitizenRegistration
 {
     @javafx.fxml.FXML

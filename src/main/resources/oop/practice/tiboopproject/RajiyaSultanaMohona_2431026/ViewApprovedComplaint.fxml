@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="619.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.RajiyaSultanaMohona_2431026.ViewApprovedComplaint">
+<AnchorPane prefHeight="619.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mohona_2431026.ViewApprovedComplaint">
    <children>
       <Label layoutX="48.0" layoutY="41.0" prefHeight="18.0" prefWidth="187.0" text="Approved Complaint List" />
       <Label layoutX="48.0" layoutY="84.0" prefHeight="18.0" prefWidth="139.0" text="Search by Complaint ID" />
