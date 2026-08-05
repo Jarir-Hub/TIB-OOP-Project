@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jarir_Bin_Rakib_2431984.CampaignCoordinator_RecordCompletionStatus_Controller">
+   <children>
+      <Label layoutX="212.0" layoutY="7.0" prefHeight="33.0" prefWidth="175.0" text="Campaign Completion Status" />
+      <Label layoutX="25.0" layoutY="52.0" prefHeight="25.0" prefWidth="102.0" text="Active Campaigns :" />
+      <TableView fx:id="campaignTableView" layoutX="25.0" layoutY="94.0" prefHeight="200.0" prefWidth="507.0">
+        <columns>
+          <TableColumn fx:id="campaignTitleColumn" prefWidth="177.59997940063477" text="Campaign Title" />
+          <TableColumn fx:id="dateColumn" prefWidth="159.99998474121094" text="Date" />
+            <TableColumn fx:id="venueColumn" prefWidth="168.800048828125" text="Venue" />
+        </columns>
+      </TableView>
+      <Label layoutX="25.0" layoutY="308.0" prefHeight="26.0" prefWidth="111.0" text="Selected Campaign :" />
+      <Label layoutX="25.0" layoutY="348.0" text="Campaign Title:" />
+      <Label fx:id="selectedCampaignLabel" layoutX="116.0" layoutY="343.0" prefHeight="26.0" prefWidth="128.0" text="Label" />
+      <Label layoutX="25.0" layoutY="382.0" text="Completion Status:" />
+      <ComboBox fx:id="statusComboBox" layoutX="137.0" layoutY="378.0" prefWidth="150.0" />
+      <Button layoutX="95.0" layoutY="439.0" mnemonicParsing="false" onAction="#updateStatusButton" text="Update Status" />
+      <Button layoutX="338.0" layoutY="439.0" mnemonicParsing="false" onAction="#refreshButton" text="Refresh" />
+   </children>
+</AnchorPane>
