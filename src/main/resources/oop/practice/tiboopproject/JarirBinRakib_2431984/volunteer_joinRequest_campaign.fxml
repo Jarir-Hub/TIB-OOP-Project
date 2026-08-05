@@ -7,20 +7,20 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="520.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="520.0" prefWidth="592.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jarir_Bin_Rakib_2431984.Volunteer_JoinRequest_Campaign_Controller">
    <children>
       <Label layoutX="247.0" layoutY="14.0" text="Request to Join Campaign" />
       <Label layoutX="38.0" layoutY="60.0" text="Campaign Information" />
       <Label layoutX="38.0" layoutY="359.0" text="Request Message:" />
       <TextArea fx:id="requestMessageTextArea" layoutX="162.0" layoutY="328.0" prefHeight="79.0" prefWidth="200.0" />
       <Button layoutX="257.0" layoutY="438.0" mnemonicParsing="false" onAction="#submitRequestButton" prefHeight="34.0" prefWidth="120.0" text="Submit Request" />
-      <TableView layoutX="38.0" layoutY="106.0" prefHeight="200.0" prefWidth="529.0">
+      <TableView fx:id="CampaignInfoTableView" layoutX="38.0" layoutY="106.0" prefHeight="200.0" prefWidth="529.0">
         <columns>
-          <TableColumn prefWidth="104.79998779296875" text="Campaign Title:" />
-          <TableColumn prefWidth="106.40003967285156" text="Location:" />
-            <TableColumn prefWidth="95.20001220703125" text="Date:" />
-            <TableColumn prefWidth="106.4000244140625" text="Participant Limit:" />
-            <TableColumn prefWidth="121.5999755859375" text="Available Slots:" />
+          <TableColumn fx:id="campaignTitleTableColumn" prefWidth="104.79998779296875" text="Campaign Title:" />
+          <TableColumn fx:id="locationTableColumn" prefWidth="106.40003967285156" text="Location:" />
+            <TableColumn fx:id="dateTableColumn" prefWidth="95.20001220703125" text="Date" />
+            <TableColumn fx:id="participationLimitTableColumn" prefWidth="106.4000244140625" text="Participant Limit" />
+            <TableColumn fx:id="availableSlotsTableColumn" prefWidth="121.5999755859375" text="Available Slots" />
         </columns>
       </TableView>
    </children>

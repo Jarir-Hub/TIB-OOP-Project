@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="449.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="449.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jarir_Bin_Rakib_2431984.Volunteer_Mark_Attendance_Controller">
    <children>
       <Label layoutX="241.0" layoutY="5.0" text="My Joined Campaigns" />
       <Label layoutX="32.0" layoutY="55.0" prefHeight="30.0" prefWidth="331.0" text="Select a campaign from the table and click &quot;Mark Attendance&quot;." />

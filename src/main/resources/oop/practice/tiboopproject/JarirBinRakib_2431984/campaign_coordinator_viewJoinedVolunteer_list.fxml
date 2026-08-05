@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="454.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="454.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jarir_Bin_Rakib_2431984.CampaignCoordinator_ViewJoinedVolunteerList_Controller">
    <children>
       <Label layoutX="228.0" layoutY="8.0" prefHeight="36.0" prefWidth="118.0" text="Volunteer List" />
       <Label layoutX="46.0" layoutY="64.0" text="  Select Campaign" />

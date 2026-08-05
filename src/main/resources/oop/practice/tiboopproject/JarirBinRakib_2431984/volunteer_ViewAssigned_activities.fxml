@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="436.0" prefWidth="662.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="436.0" prefWidth="662.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jarir_Bin_Rakib_2431984.Volunteer_ViewAssigned_Activities_Controller">
    <children>
       <Label layoutX="231.0" layoutY="5.0" text="My Assigned Campaign Activities" />
       <Label layoutX="31.0" layoutY="46.0" text="View campaigns and activities assigned to you" />
@@ -19,6 +19,6 @@
             <TableColumn fx:id="statusColumn" prefWidth="128.80010986328125" text="Status" />
         </columns>
       </TableView>
-      <Button fx:id="viewDetailsButton" layoutX="291.0" layoutY="102.0" mnemonicParsing="false" text="View Details" />
+      <Button layoutX="291.0" layoutY="102.0" mnemonicParsing="false" onAction="#viewDetailsButton" text="View Details" />
    </children>
 </AnchorPane>
