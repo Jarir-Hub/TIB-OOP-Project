@@ -82,7 +82,7 @@ public class Volunteer_Registration_Controller
             }
             while (true){
                 Volunteer volunteerObj=(Volunteer) ois.readObject();
-                if (volunteerObj.getVolunteerId()==id){
+                if (volunteerObj.getUserID()==id){
                     ois.close();
                     return true;
                 }
@@ -165,7 +165,6 @@ public class Volunteer_Registration_Controller
             alert.showAndWait();
             return;
         }
-
         String mail=emailTextField.getText();
         if (mailAlreadyExist(mail)){
             alert.setContentText("This mail is already used");

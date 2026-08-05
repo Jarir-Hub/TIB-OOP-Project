@@ -17,4 +17,5 @@ public class View_Volunteer_Profile_Controller
 
     @javafx.fxml.FXML
     public void initialize() {
+
     }}

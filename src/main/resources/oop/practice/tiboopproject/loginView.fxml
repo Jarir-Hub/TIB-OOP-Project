@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.logInController">
+   <children>
+      <Label layoutX="103.0" prefHeight="55.0" prefWidth="220.0" text="Log In Dashboard">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="130.0" prefHeight="26.0" prefWidth="88.0" text="Enter ID" />
+      <Label layoutX="69.0" layoutY="184.0" prefHeight="26.0" prefWidth="88.0" text="Enter password" />
+      <TextField fx:id="idTextField" layoutX="172.0" layoutY="131.0" />
+      <TextField fx:id="passwordTextField" layoutX="171.0" layoutY="184.0" />
+      <Button layoutX="148.0" layoutY="240.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="33.0" prefWidth="95.0" text="Log In" />
+      <Button layoutX="200.0" layoutY="317.0" mnemonicParsing="false" onAction="#registerAsVolunteer" text="Register as Volunteer" />
+      <Button layoutX="63.0" layoutY="317.0" mnemonicParsing="false" onAction="#registerAsCitizen" text="Register as Citizen" />
+   </children>
+</AnchorPane>

@@ -1,10 +1,12 @@
 package Jarir_Bin_Rakib_2431984;
 
+import oop.practice.tiboopproject.User;
+
 import java.io.Serializable;
 
 public class Volunteer extends User implements Serializable {
 
-    private int volunteerId;
+
 
     private String fullName;
 
@@ -14,28 +16,13 @@ public class Volunteer extends User implements Serializable {
 
     private String district;
 
-    private String password;
 
-
-    public Volunteer() {
-    }
-
-    public Volunteer(int volunteerId, String fullName, String phoneNumber, String email, String district, String password) {
-        this.volunteerId = volunteerId;
+    public Volunteer(int userID, String password, String fullName, String phoneNumber, String email, String district) {
+        super(userID, password, "Volunteer");
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.district = district;
-        this.password = password;
-    }
-
-
-    public int getVolunteerId() {
-        return volunteerId;
-    }
-
-    public void setVolunteerId(int volunteerId) {
-        this.volunteerId = volunteerId;
     }
 
     public String getFullName() {
@@ -70,26 +57,14 @@ public class Volunteer extends User implements Serializable {
         this.district = district;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Override
     public String toString() {
         return "Volunteer{" +
-                "volunteerId=" + volunteerId +
-                ", fullName='" + fullName + '\'' +
+                "fullName='" + fullName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", district='" + district + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
-
-
-
 }
