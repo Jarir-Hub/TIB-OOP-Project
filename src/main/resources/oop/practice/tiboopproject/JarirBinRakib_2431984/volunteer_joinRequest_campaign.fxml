@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -12,8 +13,8 @@
       <Label layoutX="247.0" layoutY="14.0" text="Request to Join Campaign" />
       <Label layoutX="38.0" layoutY="60.0" text="Campaign Information" />
       <Label layoutX="38.0" layoutY="359.0" text="Request Message:" />
-      <TextArea fx:id="requestMessageTextArea" layoutX="162.0" layoutY="328.0" prefHeight="79.0" prefWidth="200.0" />
-      <Button layoutX="257.0" layoutY="438.0" mnemonicParsing="false" onAction="#submitRequestButton" prefHeight="34.0" prefWidth="120.0" text="Submit Request" />
+      <TextArea fx:id="requestMessageTextArea" layoutX="140.0" layoutY="346.0" prefHeight="52.0" prefWidth="158.0" />
+      <Button layoutX="414.0" layoutY="391.0" mnemonicParsing="false" onAction="#submitRequestButton" prefHeight="34.0" prefWidth="120.0" text="Submit Request" />
       <TableView fx:id="CampaignInfoTableView" layoutX="38.0" layoutY="106.0" prefHeight="200.0" prefWidth="529.0">
         <columns>
           <TableColumn fx:id="campaignTitleTableColumn" prefWidth="104.79998779296875" text="Campaign Title:" />
@@ -23,5 +24,7 @@
             <TableColumn fx:id="availableSlotsTableColumn" prefWidth="121.5999755859375" text="Available Slots" />
         </columns>
       </TableView>
+      <ComboBox fx:id="selectACampaignToJoin" layoutX="218.0" layoutY="435.0" prefWidth="150.0" />
+      <Label layoutX="32.0" layoutY="439.0" text="Which campaign you want to join" />
    </children>
 </AnchorPane>

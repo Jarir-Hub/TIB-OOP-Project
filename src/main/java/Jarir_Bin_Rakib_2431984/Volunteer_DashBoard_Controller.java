@@ -25,6 +25,16 @@ public class Volunteer_DashBoard_Controller
 
     @javafx.fxml.FXML
     public void joinRequestForCampaignButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("volunteer_joinRequest_campaign.fxml"));
+            dasboardBorderPane.setCenter(fxmlLoader.load());
+            Volunteer_JoinRequest_Campaign_Controller nextController=fxmlLoader.getController();
+            nextController.receiveVolunteerIdFromDashboardController(volunteerLoggedID);
+        }
+        catch (Exception e){
+            //
+        }
+
     }
 
     @javafx.fxml.FXML
