@@ -30,6 +30,9 @@ public class MeetingDashboardControllerED
     public void initialize() {
     }
 
+    private int directorId;
+    public void receiveObjectFromExecutiveDirectoryDashboardControllerED(int id){this.directorId=id;}
+
     @javafx.fxml.FXML
     public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
     }

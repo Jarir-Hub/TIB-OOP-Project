@@ -8,29 +8,35 @@ public class ResearchDashboardControllerRO
 {
 
     @javafx.fxml.FXML
-    private TableView literatureEntryTV;
+    private TableColumn estimatedBudgetTC;
     @javafx.fxml.FXML
-    private TableColumn leadAuthorTC;
+    private TableView researchTV;
     @javafx.fxml.FXML
-    private TableColumn articleTitleTC;
+    private TableColumn projectIdTC;
     @javafx.fxml.FXML
-    private TableColumn dateAddedTC;
+    private TableColumn sectorTC;
     @javafx.fxml.FXML
-    private TableColumn entryID;
+    private TableColumn statusTC;
+    @javafx.fxml.FXML
+    private TableColumn projectTitleTC;
+    @javafx.fxml.FXML
+    private TableColumn startDateTC;
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    private int researchOfficerId;
+    public void receiveObjectFromResearchOperationsHubControllerRO(int id){
+        this.researchOfficerId=id;
     }
 
     @javafx.fxml.FXML
     public void researchOperationsHubButtonOA(ActionEvent actionEvent) {
     }
 
-    @Deprecated
-    public void startBewProjectButtonOA(ActionEvent actionEvent) {
+    @javafx.fxml.FXML
+    public void startNewProjectButtonOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void addNewLiteratureButtonOA(ActionEvent actionEvent) {
-    }
 }

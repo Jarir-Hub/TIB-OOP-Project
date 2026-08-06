@@ -4,20 +4,18 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class DraftDashboardControllerRO
+public class LiteratureEntryDashboardControllerRO
 {
     @javafx.fxml.FXML
-    private TableColumn parentProjectTitleTC;
+    private TableView literatureEntryTV;
     @javafx.fxml.FXML
-    private TableColumn submissionDateTC;
+    private TableColumn leadAuthorTC;
     @javafx.fxml.FXML
-    private TableColumn statusTC;
+    private TableColumn articleTitleTC;
     @javafx.fxml.FXML
-    private TableColumn draftIdTC;
+    private TableColumn dateAddedTC;
     @javafx.fxml.FXML
-    private TableColumn draftTitleTC;
-    @javafx.fxml.FXML
-    private TableView draftTV;
+    private TableColumn entryID;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -33,6 +31,6 @@ public class DraftDashboardControllerRO
     }
 
     @javafx.fxml.FXML
-    public void submitNewDraftButtonOA(ActionEvent actionEvent) {
+    public void addNewLiteratureButtonOA(ActionEvent actionEvent) {
     }
 }

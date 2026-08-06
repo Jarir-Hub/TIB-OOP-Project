@@ -23,6 +23,11 @@ public class TimelineManagerDashboardControllerRO
     public void initialize() {
     }
 
+    private int researchOfficerId;
+    public void receiveObjectFromResearchOperationsHubControllerRO(int id){
+        this.researchOfficerId=id;
+    }
+
     @javafx.fxml.FXML
     public void researchOperationsHubButtonOA(ActionEvent actionEvent) {
     }

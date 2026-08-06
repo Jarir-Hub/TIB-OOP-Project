@@ -1,28 +1,95 @@
 package mohona_2431026;
 
-import javafx.scene.control.ComboBox;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
-import java.awt.*;
+import java.io.*;
+import java.time.LocalDate;
+import java.util.UUID;
 
-public class SubmitComplaint
-{
-    @javafx.fxml.FXML
-    private Button but;
-    @javafx.fxml.FXML
+public class SubmitComplaint {
+
+    @FXML
     private TextField attachmentTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField titletextfield;
-    @javafx.fxml.FXML
-    private ComboBox categoryComboBox;
-    @javafx.fxml.FXML
-    private Button browseButton;
-    @javafx.fxml.FXML
-    private Button backButton;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<String> categoryComboBox;
+
+    @FXML
     private TextArea descriptionTextArea;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField locationTextField;
 
-    @javafx.fxml.FXML
+    @FXML
     public void initialize() {
-    }}
+
+        categoryComboBox.getItems().addAll(
+                "Road",
+                "Water",
+                "Electricity",
+                "Garbage",
+                "Others"
+        );
+    }
+
+    @FXML
+    public void submitButton(ActionEvent event) {
+
+        Complaint complaint = new Complaint(
+
+                UUID.randomUUID().toString(),
+
+                titletextfield.getText(),
+
+                categoryComboBox.getValue(),
+
+                descriptionTextArea.getText(),
+
+                locationTextField.getText(),
+
+                attachmentTextField.getText(),
+
+                "Citizen",
+
+                LocalDate.now(),
+
+                "Pending"
+        );
+
+        try {
+
+            File file = new File("Complaint.bin");
+
+            ObjectOutputStream oos;
+
+            if(file.exists()){
+
+                oos = new AppendableObjectOutputStream(
+                        new FileOutputStream(file,true));
+
+            }
+            else{
+
+                oos = new ObjectOutputStream(
+                        new FileOutputStream(file));
+            }
+
+            oos.writeObject(complaint);
+            oos.close();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Complaint Submitted Successfully");
+            alert.show();
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
+}

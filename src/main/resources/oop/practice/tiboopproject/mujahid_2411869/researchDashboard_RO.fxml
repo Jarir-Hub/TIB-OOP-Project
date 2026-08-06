@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.practice.tiboopproject.mujahid_2411869.ResearchDashboardControllerRO">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Research Dashboard">
@@ -25,7 +24,7 @@
             <TableColumn fx:id="statusTC" prefWidth="80.95525354158963" text="Status" />
          </columns>
       </TableView>
-      <Button layoutX="290.0" layoutY="463.0" mnemonicParsing="false" onAction="#startBewProjectButtonOA" prefHeight="50.0" prefWidth="170.0" text="Start New Project" />
+      <Button layoutX="290.0" layoutY="463.0" mnemonicParsing="false" onAction="#startNewProjectButtonOA" prefHeight="50.0" prefWidth="170.0" text="Start New Project" />
       <Button layoutX="291.0" layoutY="546.0" mnemonicParsing="false" onAction="#researchOperationsHubButtonOA" prefHeight="50.0" prefWidth="170.0" text="Research Operations Hub" />
    </children>
 </AnchorPane>
