@@ -67,6 +67,12 @@ public class logInController
         user = searchUser("CitizenInfo.bin", id, password);
         if(user != null) return user;
 
+        user = searchUser("StrategicDirectorInfo.bin", id, password);
+        if(user != null) return user;
+
+        user = searchUser("ResearchOfficerInfo.bin", id, password);
+        if(user != null) return user;
+
         user = searchUser("ComplaintOfficerInfo.bin", id, password);
         if(user != null) return user;
 
@@ -74,9 +80,6 @@ public class logInController
         if(user != null) return user;
 
         user = searchUser("FinanceHRManagerInfo.bin", id, password);
-        if(user != null) return user;
-
-        user = searchUser("StrategicDirectorInfo.bin", id, password);
         if(user != null) return user;
 
         user = searchUser("AssetManager.bin", id, password);
@@ -94,13 +97,27 @@ public class logInController
     @javafx.fxml.FXML
     public void loginButton(ActionEvent actionEvent) {
 
-        //Validation
-        //------do the validation
-
-        //If Validation fails show proper message....
-
-        String password=passwordTextField.getText();
+        String userId = idTextField.getText().strip();
+        String password = passwordTextField.getText();
         int id=Integer.parseInt(idTextField.getText());
+
+
+        //User ID Check: Checks if User ID is exactly 4 or 8 characters.
+        if (userId.length() != 4 && userId.length() != 8 ){
+            al.setContentText("User ID length doesn't match");
+            al.showAndWait();
+            return;
+        }
+
+        //Password Check: Checks if Password is 8+ characters and contains
+        // uppercase, lowercase, and numbers.
+        if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$")) {
+            al.setContentText("Password must contain an uppercase letter, a lowercase letter, and a number.");
+            al.showAndWait();
+            return;
+
+        }
+
 
         User user=authenticateUser(id,password);
         if (user==null){
