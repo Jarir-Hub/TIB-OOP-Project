@@ -1,25 +1,40 @@
 package mujahid_2411869;
 
-public class ResearchOfficer {
-    private final String role = "Research Officer";
+import oop.practice.tiboopproject.User;
+
+import java.io.Serializable;
+
+public class ResearchOfficer extends User implements Serializable {
     private String researchDomain;
     private int publicationCount;
 
-    public ResearchOfficer(String researchDomain, int publicationCount) {
+    public ResearchOfficer(int userID, String password, String userType, String researchDomain, int publicationCount) {
+        super(userID, password, userType="Research Officer");
         this.researchDomain = researchDomain;
         this.publicationCount = publicationCount;
     }
 
-    public String getRole() {
-        return role;
+    public String getResearchDomain() {return researchDomain;}
+
+    public void setResearchDomain(String researchDomain) {
+        this.researchDomain = researchDomain;
     }
 
-    public String getResearchDomain() {
-        return researchDomain;
+    public int getPublicationCount() {return publicationCount;}
+
+    public void setPublicationCount(int publicationCount) {
+        this.publicationCount = publicationCount;
     }
 
-    public int getPublicationCount() {
-        return publicationCount;
+    @Override
+    public String toString() {
+        return "ResearchOfficer{" +
+                "researchDomain='" + researchDomain + '\'' +
+                ", publicationCount=" + publicationCount +
+                ", userID=" + userID +
+                ", password='" + password + '\'' +
+                ", userType='" + userType + '\'' +
+                '}';
     }
 
     /*
