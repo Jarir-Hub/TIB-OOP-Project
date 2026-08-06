@@ -1,15 +1,10 @@
 package Jarir_Bin_Rakib_2431984;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
-public class CampaignCoordinator_SendNoticeToVolunteer_Controller
+public class CampaignCoordinator_AssignActivitiesToVolunteer_Controller
 {
-    @javafx.fxml.FXML
-    private TextArea noticeMessageTextArea;
     @javafx.fxml.FXML
     private TableColumn locationColumn;
     @javafx.fxml.FXML
@@ -20,16 +15,24 @@ public class CampaignCoordinator_SendNoticeToVolunteer_Controller
     private TableColumn dateColumn;
     @javafx.fxml.FXML
     private Label selectedCampaignLabel;
+    @javafx.fxml.FXML
+    private ComboBox selectCampaignComboBox;
+    @javafx.fxml.FXML
+    private TextArea activitiesMessageTextArea;
+    @javafx.fxml.FXML
+    private ComboBox selectVolunteerToAssignComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
-    public void sendNoticeButton(ActionEvent actionEvent) {
-    }
+
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void sendAssignedActivitiesButton(ActionEvent actionEvent) {
     }
 }

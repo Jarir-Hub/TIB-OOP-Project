@@ -21,6 +21,15 @@ public class Volunteer_DashBoard_Controller
 
     @javafx.fxml.FXML
     public void updateVolunteerProfileButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("volunteer_update_profile.fxml"));
+            dasboardBorderPane.setCenter(fxmlLoader.load());
+            Volunteer_Update_Profile_Controller nextController=fxmlLoader.getController();
+            nextController.receiveVolunteerId(volunteerLoggedID);
+        }
+        catch (Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML
@@ -43,6 +52,16 @@ public class Volunteer_DashBoard_Controller
 
     @javafx.fxml.FXML
     public void viewAssignedCampaignActivitiesButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("volunteer_ViewAssigned_activities.fxml"));
+            dasboardBorderPane.setCenter(fxmlLoader.load());
+            Volunteer_ViewAssigned_Activities_Controller nextController=fxmlLoader.getController();
+            nextController.receiveVolunteerId(volunteerLoggedID);
+        }
+        catch (Exception e){
+            //
+        }
+
     }
 
     @javafx.fxml.FXML
