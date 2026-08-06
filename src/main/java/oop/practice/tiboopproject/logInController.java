@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import oop.practice.tiboopproject.mujahid_2411869.ExecutiveDirectoryDashboardControllerED;
+import oop.practice.tiboopproject.mujahid_2411869.ResearchOperationsHubControllerRO;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -140,8 +142,36 @@ public class logInController
             }
 
         }
-        else if (user.getUserType().equals("Write your user here")){
-            //show your user fxml
+        else if (user.getUserType().equals("Executive Director")){
+            try{
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("oop.practice.tiboopproject.mujahid_2411869.executiveDirectoryDashboardControllerED"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage newStage = new Stage();
+                newStage.setTitle("Executive Directory Dashboard");
+                newStage.setScene(scene);
+                ExecutiveDirectoryDashboardControllerED nextController = fxmlLoader.getController();
+                nextController.receiveObjectFromLoginController(id);
+                newStage.show();
+
+            } catch (Exception e) {
+                //
+            }
+        }
+
+        else if (user.getUserType().equals("Research Officer")) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("oop.practice.tiboopproject.mujahid_2411869.ResearchOperationsHubControllerRO"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage newStage = new Stage();
+                newStage.setTitle("Research Operations Hub Dashboard");
+                newStage.setScene(scene);
+                ResearchOperationsHubControllerRO nextController = fxmlLoader.getController();
+                nextController.receiveObjectFromLoginController(id);
+                newStage.show();
+
+            } catch (Exception e) {
+                //
+            }
         }
 
 

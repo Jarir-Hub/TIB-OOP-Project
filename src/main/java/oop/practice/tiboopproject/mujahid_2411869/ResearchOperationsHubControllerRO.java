@@ -8,6 +8,11 @@ public class ResearchOperationsHubControllerRO
     public void initialize() {
     }
 
+    private int researchOfficerId;
+    public void receiveObjectFromLoginController(int id){
+        this.researchOfficerId=id;
+    }
+
     @javafx.fxml.FXML
     public void manuallyRecordSingleFieldObservationButtonOA(ActionEvent actionEvent) {
     }

@@ -3,13 +3,18 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class executiveDirectoryDashboardControllerED
+public class ExecutiveDirectoryDashboardControllerED
 {
     @javafx.fxml.FXML
     private AnchorPane executiveDirectoryAP;
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    private int directorId;
+    public void receiveObjectFromLoginController(int id){
+        this.directorId=id;
     }
 
     @javafx.fxml.FXML
