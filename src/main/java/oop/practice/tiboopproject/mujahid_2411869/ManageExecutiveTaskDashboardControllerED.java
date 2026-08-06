@@ -26,6 +26,9 @@ public class ManageExecutiveTaskDashboardControllerED
     public void initialize() {
     }
 
+    private int directorId;
+    public void receiveObjectFromExecutiveDirectoryDashboardControllerED(int id){this.directorId=id;}
+
     @javafx.fxml.FXML
     public void addNewTaskButtonOA(ActionEvent actionEvent) {
     }

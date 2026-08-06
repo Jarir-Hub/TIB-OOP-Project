@@ -26,6 +26,9 @@ public class StrategicRoadmapDashboardControllerED
     public void initialize() {
     }
 
+    private int directorId;
+    public void receiveObjectFromExecutiveDirectoryDashboardControllerED(int id){this.directorId=id;}
+
     @javafx.fxml.FXML
     public void defineNewRoadmapButtonOA(ActionEvent actionEvent) {
     }
