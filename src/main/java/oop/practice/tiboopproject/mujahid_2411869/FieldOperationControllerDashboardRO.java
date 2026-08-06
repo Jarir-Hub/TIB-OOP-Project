@@ -3,7 +3,7 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-public class FieldOperationControllerRO
+public class FieldOperationControllerDashboardRO
 {
     @javafx.fxml.FXML
     private TableColumn associatedProjectTC;
@@ -32,6 +32,11 @@ public class FieldOperationControllerRO
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    private int researchOfficerId;
+    public void receiveObjectFromResearchOperationsHubControllerRO(int id){
+        this.researchOfficerId=id;
     }
 
     @javafx.fxml.FXML
