@@ -21,6 +21,12 @@ public class Complaint implements Serializable {
     public Complaint() {
     }
 
+    public Complaint(int complaintID, String text, Object value, String text1, String text2, String text3, LocalDate value1, String pending) {
+    }
+
+    public Complaint(String string, String text, String value, String text1, String text2, String text3, String citizen, LocalDate now, String pending) {
+    }
+
     public int getComplaintId() {
         return complaintId;
     }
