@@ -4,9 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -31,6 +29,8 @@ public class Volunteer_JoinRequest_Campaign_Controller
     @javafx.fxml.FXML
     private ComboBox<String> selectACampaignToJoin;
 
+    private int volunteerID;
+
     @javafx.fxml.FXML
     public void initialize() {
 
@@ -53,7 +53,10 @@ public class Volunteer_JoinRequest_Campaign_Controller
             }
             while (true){
                 Campaign cmp=(Campaign) ois.readObject();
-                selectACampaignToJoin.getItems().add(cmp.getCampaignTitle());
+                if (cmp.getAvailableSlots()>0){
+                    selectACampaignToJoin.getItems().add(cmp.getCampaignTitle());
+                }
+
 
             }
         }
@@ -107,12 +110,13 @@ public class Volunteer_JoinRequest_Campaign_Controller
     }
 
 
-    private int volunteerID;
+
+    private Volunteer volunteer;
     public void receiveVolunteerIdFromDashboardController(int id){
         this.volunteerID=id;
-
-
+        this.volunteer=getVolunteerInfo(volunteerID);
     }
+
     public Volunteer getVolunteerInfo(int volunteerID) {
         ArrayList<Volunteer> volList = new ArrayList<>();
 
@@ -153,9 +157,42 @@ public class Volunteer_JoinRequest_Campaign_Controller
     }
 
 
-
+    public boolean isRequestAlreadyExist(int id,String title ){
+        FileInputStream fis=null;
+        ObjectInputStream ois=null;
+        try {
+            File f=new File("CampaignRequestInfo.bin");
+            if (f.exists()){
+                fis=new FileInputStream(f);
+                ois=new ObjectInputStream(fis);
+            }
+            else {
+                //
+            }
+            while (true){
+                VolunteerCampaignRequest request=(VolunteerCampaignRequest) ois.readObject();
+                if (request.getVolunteerId()==id && request.getCampaignTitle().equals(title)&&
+                request.getStatus().equals("pending")){
+                    ois.close();
+                    return true;
+                }
+            }
+        }
+        catch (Exception e){
+            try {
+                if (ois!=null){
+                    ois.close();
+                }
+            }
+            catch (Exception e1){
+                //
+            }
+        }
+        return false;
+    }
     @javafx.fxml.FXML
     public void submitRequestButton(ActionEvent actionEvent) {
+        String campaignTitle=selectACampaignToJoin.getValue();
 
         if (selectACampaignToJoin.getValue() == null) {
             alert.setContentText("Please select a campaign.");
@@ -167,6 +204,44 @@ public class Volunteer_JoinRequest_Campaign_Controller
             alert.showAndWait();
             return;
         }
+
+
+        if (isRequestAlreadyExist(volunteerID,campaignTitle)){
+            alert.setContentText("You have already requested to join this campaign.");
+            alert.showAndWait();
+            return;
+        }
+
+        VolunteerCampaignRequest request=new VolunteerCampaignRequest(
+                volunteerID,
+                volunteer.getFullName(),
+                selectACampaignToJoin.getValue(),
+                requestMessageTextArea.getText(),
+                "pending",
+                LocalDate.now()
+        );
+        FileOutputStream fos=null;
+        ObjectOutputStream oos=null;
+        try {
+            File file = new File("CampaignRequestInfo.bin");
+            if (file.exists()){
+                fos=new FileOutputStream(file,true);
+                oos=new AppendableObjectOutputStream(fos);
+            }
+            else {
+                fos=new FileOutputStream(file);
+                oos=new ObjectOutputStream(fos);
+            }
+            oos.writeObject(request);
+            oos.close();
+            requestMessageTextArea.clear();
+            selectACampaignToJoin.setValue(null);
+        }
+        catch (Exception e){
+            //
+        }
+
+
 
 
 

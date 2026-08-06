@@ -28,6 +28,7 @@ public class CitizenRegistration
 
     @javafx.fxml.FXML
     public void registerButton(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML

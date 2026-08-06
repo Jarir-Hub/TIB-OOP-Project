@@ -108,7 +108,5 @@ public class Volunteer_ViewAvailable_Campaigns_Controller
 
     }
 
-    @Deprecated
-    public void SearchButton(ActionEvent actionEvent) {
-    }
+
 }
