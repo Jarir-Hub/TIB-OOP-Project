@@ -1,5 +1,10 @@
 package mujahid_2411869;
+import Jarir_Bin_Rakib_2431984.AppendableObjectOutputStream;
 import oop.practice.tiboopproject.User;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -44,10 +49,35 @@ public class ExecutiveDirector extends User implements Serializable {
                 '}';
     }
 
-    /*
+
     public boolean sendAnnouncement(Announcement announcementData){
+        File file= new File("Announcement.bin");
+
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+
+        try{
+            if (file.exists()){
+                fos= new FileOutputStream(file,true);
+                oos= new AppendableObjectOutputStream(fos);
+            }
+            else {
+                fos=new FileOutputStream(file);
+                oos=new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(announcementData);
+            oos.close();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
     }
 
+    /*
     public boolean scheduleNewMeeting(Meeting meetingData){
     }
 

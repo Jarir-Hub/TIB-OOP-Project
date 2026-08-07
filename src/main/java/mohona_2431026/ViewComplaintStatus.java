@@ -40,8 +40,15 @@ public class ViewComplaintStatus {
     @FXML
     public void initialize() {
 
+<<<<<<< HEAD
         complaintIdColumn.setCellValueFactory(
                 new PropertyValueFactory<>("complaintId"));
+=======
+        complaintIdColumn.setCellValueFactory(new PropertyValueFactory<>("ComplaintID"));
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("complaint title"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("submissiondate"));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("current status"));
+>>>>>>> 1e63e31e4bd1cc39f97a314e53a09534c805185f
 
         titleColumn.setCellValueFactory(
                 new PropertyValueFactory<>("title"));
