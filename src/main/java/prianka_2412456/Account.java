@@ -1,8 +1,12 @@
 package prianka_2412456;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Locale;
+import java.util.Random;
 
-public class Account {
+public class Account implements Serializable {
 
     private String accountId;
     private String name;
@@ -93,24 +97,73 @@ public class Account {
         this.mustChangePassword = mustChangePassword;
     }
 
+
+
+    public boolean validatePasswordStrength() {
+
+        return password != null && password.length() >= 6;
+
+    }
+
+    public boolean validateUsernameUnique(String username, List<Account> existingAccount){
+        if(username != null || username.isBlank()){
+            return false;
+        }
+
+        for (Account account: existingAccount){
+            if(account.getUsername() != null && account.getUsername().equalsIgnoreCase(username)){
+                return false;
+            }
+
+        }
+
+        return true;
+    }
+
+    // need to checkk
+    public boolean verifyNotSelfAccount(String currentlyLoggedInAccountId) {
+        return currentlyLoggedInAccountId == null || !currentlyLoggedInAccountId.equals(this.accountId);
+    }
+
+
+
+    //
+    public boolean roleCheck(){
+        return role!= null;
+    }
+
+    public boolean matchesSearchKeyword(String keyword){
+        if(keyword != null && keyword.isBlank()){
+            return false;
+        }
+
+        String lowerKeyword = keyword.toLowerCase();
+        return (name != null && name.toLowerCase().contains(lowerKeyword))
+                || (username != null && username.toLowerCase().contains(lowerKeyword));
+
+
+    }
+
+
+    public static String generatePassword(){
+
+        String allow = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789";
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < 10; i++){
+            sb.append(allow.charAt(random.nextInt(allow.length())));
+
+        }
+        return sb.toString();
+
+    }
     @Override
     public String toString() {
-        return "Account{" +
-                "accountId='" + accountId + '\'' +
-                ", name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
-                ", status='" + status + '\'' +
-                ", lastLogin=" + lastLogin +
-                ", mustChangePassword=" + mustChangePassword +
-                '}';
+        return name + " (" + username + ")";
     }
 
-    public static boolean ValidateUsernameUnique(String username){
 
 
-        return false;
-    }
 
 }
