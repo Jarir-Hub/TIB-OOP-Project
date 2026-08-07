@@ -13,7 +13,7 @@ public class Asset implements Serializable {
     int purchaseCost;
     LocalDate purchaseDate;
     String catagory;
-    String status;
+    static String status;
     String location;
     String assignTo;
 

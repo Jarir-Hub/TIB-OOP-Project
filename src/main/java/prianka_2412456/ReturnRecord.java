@@ -1,16 +1,18 @@
 package prianka_2412456;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ReturnRecord {
-    int returnID;
-    int assetID;
-    int employedID;
+public class ReturnRecord implements Serializable {
+    String returnID;
+    String assetID;
+    String employedID;
     String retunCondition;
     String additionalNote;
     LocalDate returnDate;
 
-    public ReturnRecord(int returnID, int assetID, int employedID, String retunCondition, String additionalNote, LocalDate returnDate) {
+
+    public ReturnRecord(String returnID, String assetID, String employedID, String retunCondition, String additionalNote, LocalDate returnDate) {
         this.returnID = returnID;
         this.assetID = assetID;
         this.employedID = employedID;
@@ -19,27 +21,27 @@ public class ReturnRecord {
         this.returnDate = returnDate;
     }
 
-    public int getReturnID() {
+    public String getReturnID() {
         return returnID;
     }
 
-    public void setReturnID(int returnID) {
+    public void setReturnID(String returnID) {
         this.returnID = returnID;
     }
 
-    public int getAssetID() {
+    public String getAssetID() {
         return assetID;
     }
 
-    public void setAssetID(int assetID) {
+    public void setAssetID(String assetID) {
         this.assetID = assetID;
     }
 
-    public int getEmployedID() {
+    public String getEmployedID() {
         return employedID;
     }
 
-    public void setEmployedID(int employedID) {
+    public void setEmployedID(String employedID) {
         this.employedID = employedID;
     }
 
@@ -67,16 +69,14 @@ public class ReturnRecord {
         this.returnDate = returnDate;
     }
 
-
-
     //
-    public boolean validateReturnConditionSelected(){
+    public boolean validateReturnConditionSelected() {
 
+        return retunCondition != null && !retunCondition.isBlank();
     }
 
-
-    public boolean validateAssetStatusAssigned(){
-
+    public static boolean validateAssetStatusAssigned(Asset asset) {
+        return asset != null && Asset.status.equalsIgnoreCase(asset.getStatus());
     }
 
 }
