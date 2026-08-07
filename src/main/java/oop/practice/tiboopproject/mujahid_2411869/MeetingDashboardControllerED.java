@@ -5,40 +5,59 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import mujahid_2411869.Announcement;
 import mujahid_2411869.ExecutiveDirector;
+import mujahid_2411869.Meeting;
 import oop.practice.tiboopproject.HelloApplication;
+
+import java.sql.Time;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class MeetingDashboardControllerED
 {
     @javafx.fxml.FXML
-    private TableView meetingTV;
+    private TableView<Meeting> meetingTV;
     @javafx.fxml.FXML
-    private TableColumn scheduledDateTC;
+    private TableColumn<Meeting, LocalDate> scheduledDateTC;
     @javafx.fxml.FXML
-    private TableColumn authorNameTC;
+    private TableColumn<Meeting,String> authorNameTC;
     @javafx.fxml.FXML
-    private TableColumn meetingIdTC;
+    private TableColumn<Meeting,Integer> meetingIdTC;
     @javafx.fxml.FXML
-    private TableColumn participantCountTC;
+    private TableColumn<Meeting,Integer> participantCountTC;
     @javafx.fxml.FXML
-    private TableColumn scheduledTimeTC;
+    private TableColumn<Meeting,String> agendaPointsTc;
     @javafx.fxml.FXML
-    private TableColumn meetingTimeTC;
-    @javafx.fxml.FXML
-    private AnchorPane meetingDashboardAP;
-    @javafx.fxml.FXML
-    private TableColumn announcementDateTC21;
+    private TableColumn<Meeting,String> meetingTitleTC;
 
     @javafx.fxml.FXML
     public void initialize() {
+        meetingIdTC.setCellValueFactory(new PropertyValueFactory<>("meetingId"));
+        meetingTitleTC.setCellValueFactory(new PropertyValueFactory<>("meetingTitle"));
+        agendaPointsTc.setCellValueFactory(new PropertyValueFactory<>("agendaPoints"));
+        participantCountTC.setCellValueFactory(new PropertyValueFactory<>("participantCount"));
+        scheduledDateTC.setCellValueFactory(new PropertyValueFactory<>("scheduledDate"));
     }
 
     private ExecutiveDirector loggedInUser;
     public void receivedUserObject(ExecutiveDirector user) {
         loggedInUser = user;
+        loadTable();
     }
+
+    public void loadTable(){
+        ArrayList<Meeting> dataToLoad= loggedInUser.readMeetingObject();
+
+        for (Meeting a: dataToLoad){
+            meetingTV.getItems().add(a);
+        }
+    }
+
+
 
     @javafx.fxml.FXML
     public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
@@ -59,5 +78,19 @@ public class MeetingDashboardControllerED
 
     @javafx.fxml.FXML
     public void scheduleNewMeetingButtonOA(ActionEvent actionEvent) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("oop.practice.tiboopproject.mujahid_2411869.ScheduleNewMeetingControllerED"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage newStage = new Stage();
+            newStage.setTitle("New Meeting");
+            newStage.setScene(scene);
+            ScheduleNewMeetingControllerED nextController = fxmlLoader.getController();
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
+            newStage.show();
+
+        } catch (Exception e) {
+            //
+        }
+
     }
 }

@@ -3,13 +3,13 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import mujahid_2411869.ExecutiveDirector;
+import mujahid_2411869.Meeting;
 import oop.practice.tiboopproject.HelloApplication;
+
+import java.time.LocalDate;
 
 public class ScheduleNewMeetingControllerED
 {
@@ -20,9 +20,11 @@ public class ScheduleNewMeetingControllerED
     @javafx.fxml.FXML
     private TextField meetingTitleTF;
     @javafx.fxml.FXML
-    private ComboBox participantsCMB;
-    @javafx.fxml.FXML
     private TextField agendaPointsTF;
+
+    Alert alert= new Alert(Alert.AlertType.INFORMATION);
+    @javafx.fxml.FXML
+    private TextField participantsCountTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -50,7 +52,27 @@ public class ScheduleNewMeetingControllerED
         }
     }
 
+
     @javafx.fxml.FXML
     public void saveMeetingButtonOA(ActionEvent actionEvent) {
+        if (meetingTitleTF.getText().isBlank()){
+            alert.setContentText("Meeting Title is Empty");
+            alert.showAndWait();
+            return;
+        }
+        if ((meetingDateDP.getValue()).isBefore(LocalDate.now())){
+            alert.setContentText("Schedule Date Can't be Past Date");
+            alert.showAndWait();
+            return;
+        }
+
+        loggedInUser.createNewMeeting(meetingTitleTF.getText(),
+                meetingDateDP.getValue(),agendaPointsTF.getText(),
+                Integer.parseInt(participantsCountTF.getText()));
+
+
+
+
+
     }
 }

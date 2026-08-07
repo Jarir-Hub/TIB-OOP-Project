@@ -117,10 +117,70 @@ public class ExecutiveDirector extends User implements Serializable {
 
 
 
-    /*
-    public boolean scheduleNewMeeting(Meeting meetingData){
+
+    public Meeting createNewMeeting(String meetingTitle, LocalDate scheduledDate, String agendaPoints, int participantCount){
+        Meeting newMeeting = new Meeting(
+                meetingTitle, scheduledDate,agendaPoints,participantCount);
+        scheduleNewMeeting(newMeeting);
+        return newMeeting;
     }
 
+    public boolean scheduleNewMeeting(Meeting meetingData){
+        File file= new File("MeetingData.bin");
+
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+
+        try{
+            if (file.exists()){
+                fos= new FileOutputStream(file,true);
+                oos= new AppendableObjectOutputStream(fos);
+            }
+            else {
+                fos=new FileOutputStream(file);
+                oos=new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(meetingData);
+            oos.close();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    public ArrayList<Meeting> readMeetingObject(){
+        ArrayList<Meeting> meetingList = new ArrayList<>();
+        File file= new File("MeetingData.bin");
+
+        try{
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true){
+                try{
+                    Meeting a= (Meeting) ois.readObject();
+                    meetingList.add(a);
+
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                    ois.close();
+                    break;
+                }
+            }
+        }
+        catch (Exception e) {
+            //
+        }
+        return meetingList;
+    }
+
+
+    /*
     public boolean publishPolicy(Policy policyData){
     }
 
