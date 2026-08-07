@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import mujahid_2411869.ResearchOfficer;
 import oop.practice.tiboopproject.HelloApplication;
 
 public class ResearchOperationsHubControllerRO
@@ -12,9 +13,9 @@ public class ResearchOperationsHubControllerRO
     public void initialize() {
     }
 
-    private int researchOfficerId;
-    public void receiveObjectFromLoginController(int id){
-        this.researchOfficerId=id;
+    private ResearchOfficer loggedInUser;
+    public void receivedUserObject(ResearchOfficer user) {
+        loggedInUser = user;
     }
 
     @javafx.fxml.FXML
@@ -26,7 +27,7 @@ public class ResearchOperationsHubControllerRO
             newStage.setTitle("");
             newStage.setScene(scene);
             FieldOperationControllerDashboardRO nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromResearchOperationsHubControllerRO(researchOfficerId);
+            nextController.receivedUserObject((ResearchOfficer) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {
@@ -44,7 +45,7 @@ public class ResearchOperationsHubControllerRO
             newStage.setTitle("");
             newStage.setScene(scene);
             TimelineManagerDashboardControllerRO nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromResearchOperationsHubControllerRO(researchOfficerId);
+            nextController.receivedUserObject((ResearchOfficer) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {
@@ -61,7 +62,7 @@ public class ResearchOperationsHubControllerRO
             newStage.setTitle("");
             newStage.setScene(scene);
             ResearchDashboardControllerRO nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromResearchOperationsHubControllerRO(researchOfficerId);
+            nextController.receivedUserObject((ResearchOfficer) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {
@@ -79,7 +80,7 @@ public class ResearchOperationsHubControllerRO
             newStage.setTitle("");
             newStage.setScene(scene);
             LiteratureEntryDashboardControllerRO nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromResearchOperationsHubControllerRO(researchOfficerId);
+            nextController.receivedUserObject((ResearchOfficer) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {
@@ -100,7 +101,7 @@ public class ResearchOperationsHubControllerRO
             newStage.setTitle("");
             newStage.setScene(scene);
             DraftDashboardControllerRO nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromResearchOperationsHubControllerRO(researchOfficerId);
+            nextController.receivedUserObject((ResearchOfficer) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {
@@ -117,7 +118,7 @@ public class ResearchOperationsHubControllerRO
             newStage.setTitle("");
             newStage.setScene(scene);
             DigitalResearchSurveyDashboardControllerRO nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromResearchOperationsHubControllerRO(researchOfficerId);
+            nextController.receivedUserObject((ResearchOfficer) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {
@@ -134,7 +135,7 @@ public class ResearchOperationsHubControllerRO
             newStage.setTitle("");
             newStage.setScene(scene);
             PersonalNotesDashboardControllerRO nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromResearchOperationsHubControllerRO(researchOfficerId);
+            nextController.receivedUserObject((ResearchOfficer) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {

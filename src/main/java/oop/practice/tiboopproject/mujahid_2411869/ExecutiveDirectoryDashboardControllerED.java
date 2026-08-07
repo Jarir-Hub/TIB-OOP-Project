@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import mujahid_2411869.ExecutiveDirector;
 import oop.practice.tiboopproject.HelloApplication;
 
 public class ExecutiveDirectoryDashboardControllerED
@@ -14,15 +15,14 @@ public class ExecutiveDirectoryDashboardControllerED
     public void initialize() {
     }
 
-    private int directorId;
-    public void receiveObjectFromLoginController(int id){
-        this.directorId=id;
+    //user loggedin
+    private ExecutiveDirector loggedInUser;
+    public void receivedUserObject(ExecutiveDirector user) {
+        loggedInUser = user;
     }
 
     @javafx.fxml.FXML
     public void ReviewAndApproveOrRejectAResearchDraftButtonOA(ActionEvent actionEvent) {
-
-
     }
 
     @javafx.fxml.FXML
@@ -34,7 +34,7 @@ public class ExecutiveDirectoryDashboardControllerED
             newStage.setTitle("Meeting Dashboard");
             newStage.setScene(scene);
             MeetingDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromExecutiveDirectoryDashboardControllerED(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
         }
         catch (Exception e){
@@ -51,7 +51,7 @@ public class ExecutiveDirectoryDashboardControllerED
             newStage.setTitle("Policy Dashboard");
             newStage.setScene(scene);
             PolicyDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromExecutiveDirectoryDashboardControllerED(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
         }
         catch (Exception e){
@@ -68,7 +68,7 @@ public class ExecutiveDirectoryDashboardControllerED
             newStage.setTitle("Manage Executive Task Dashboard");
             newStage.setScene(scene);
             ManageExecutiveTaskDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromExecutiveDirectoryDashboardControllerED(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
         }
         catch (Exception e){
@@ -85,7 +85,7 @@ public class ExecutiveDirectoryDashboardControllerED
             newStage.setTitle("Strategic Roadmap Dashboard");
             newStage.setScene(scene);
             StrategicRoadmapDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromExecutiveDirectoryDashboardControllerED(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
         }
         catch (Exception e){
@@ -102,7 +102,7 @@ public class ExecutiveDirectoryDashboardControllerED
             newStage.setTitle("Press Statement Dashboard");
             newStage.setScene(scene);
             PressStatementDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromExecutiveDirectoryDashboardControllerED(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
         }
         catch (Exception e){
@@ -120,7 +120,7 @@ public class ExecutiveDirectoryDashboardControllerED
             newStage.setTitle("MoU Dashboard");
             newStage.setScene(scene);
             MoUDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromExecutiveDirectoryDashboardControllerED(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
         }
         catch (Exception e){
@@ -137,7 +137,7 @@ public class ExecutiveDirectoryDashboardControllerED
             newStage.setTitle("Announcement Dashboard");
             newStage.setScene(scene);
             AnnouncementDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromExecutiveDirectoryDashboardControllerED(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
         }
         catch (Exception e){

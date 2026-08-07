@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import mujahid_2411869.ExecutiveDirector;
+import mujahid_2411869.ResearchOfficer;
 import oop.practice.tiboopproject.mujahid_2411869.ExecutiveDirectoryDashboardControllerED;
 import oop.practice.tiboopproject.mujahid_2411869.ResearchOperationsHubControllerRO;
 
@@ -121,7 +123,7 @@ public class logInController
         }
 
 
-        User user=authenticateUser(id,password);
+        User user= authenticateUser(id,password);
         if (user==null){
             al.setContentText("Invalid Password or username");
             al.showAndWait();
@@ -150,7 +152,7 @@ public class logInController
                 newStage.setTitle("Executive Directory Dashboard");
                 newStage.setScene(scene);
                 ExecutiveDirectoryDashboardControllerED nextController = fxmlLoader.getController();
-                nextController.receiveObjectFromLoginController(id);
+                nextController.receivedUserObject((ExecutiveDirector) user);
                 newStage.show();
 
             } catch (Exception e) {
@@ -166,7 +168,7 @@ public class logInController
                 newStage.setTitle("Research Operations Hub Dashboard");
                 newStage.setScene(scene);
                 ResearchOperationsHubControllerRO nextController = fxmlLoader.getController();
-                nextController.receiveObjectFromLoginController(id);
+                nextController.receivedUserObject((ResearchOfficer) user);
                 newStage.show();
 
             } catch (Exception e) {

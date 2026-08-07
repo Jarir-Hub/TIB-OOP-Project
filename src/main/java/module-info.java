@@ -3,6 +3,7 @@ module oop.practice.tiboopproject {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.desktop;
+    requires oop.practice.tiboopproject;
 
     // Main package (Contains HelloApplication, HelloController, User.java, etc.)
     exports oop.practice.tiboopproject;

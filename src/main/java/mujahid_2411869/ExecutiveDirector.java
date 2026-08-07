@@ -2,11 +2,9 @@ package mujahid_2411869;
 import Jarir_Bin_Rakib_2431984.AppendableObjectOutputStream;
 import oop.practice.tiboopproject.User;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class ExecutiveDirector extends User implements Serializable {
     private  String name,email;
@@ -49,6 +47,18 @@ public class ExecutiveDirector extends User implements Serializable {
                 '}';
     }
 
+    public Announcement createAnnouncement(String authorName, String title, String targetAudience, String messageBody ){
+        Announcement newAnnouncement= new Announcement(
+                LocalDate.now(),
+                authorName,
+                title,
+                targetAudience,
+                messageBody
+        );
+        sendAnnouncement(newAnnouncement);
+        return newAnnouncement;
+    }
+
 
     public boolean sendAnnouncement(Announcement announcementData){
         File file= new File("Announcement.bin");
@@ -76,6 +86,36 @@ public class ExecutiveDirector extends User implements Serializable {
         }
 
     }
+
+
+    public ArrayList<Announcement> readAnnouncementObject(){
+        ArrayList<Announcement> announcementList = new ArrayList<>();
+        File file= new File("Announcement.bin");
+
+        try{
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true){
+                try{
+                    Announcement a= (Announcement) ois.readObject();
+                    announcementList.add(a);
+
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                    ois.close();
+                    break;
+                }
+            }
+        }
+        catch (Exception e) {
+            //
+        }
+        return announcementList;
+    }
+
+
 
     /*
     public boolean scheduleNewMeeting(Meeting meetingData){
