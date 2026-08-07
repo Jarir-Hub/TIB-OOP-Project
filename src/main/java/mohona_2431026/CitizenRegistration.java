@@ -79,7 +79,10 @@ public class CitizenRegistration {
             return;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 460e1881f3f59188d40bd1caa9142ae1528c4b17
         if (!password.equals(confirmPassword)) {
 
             showAlert(Alert.AlertType.ERROR,
@@ -89,7 +92,10 @@ public class CitizenRegistration {
             return;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 460e1881f3f59188d40bd1caa9142ae1528c4b17
         if (emailExists(email)) {
 
             showAlert(Alert.AlertType.ERROR,
@@ -99,7 +105,7 @@ public class CitizenRegistration {
             return;
         }
 
-        // Event-6
+
         Citizen citizen = new Citizen(
                 username,
                 password,
@@ -131,7 +137,7 @@ public class CitizenRegistration {
                 aoos.close();
             }
 
-            // Event-7
+
             showAlert(Alert.AlertType.INFORMATION,
                     "Success",
                     "Citizen account registered successfully.");
@@ -179,19 +185,7 @@ public class CitizenRegistration {
     @FXML
     public void backButton(ActionEvent actionEvent) {
 
-        System.out.println("Back Button Clicked");
 
-    }
-
-    private void showAlert(Alert.AlertType type,
-                           String title,
-                           String message) {
-
-        Alert alert = new Alert(type);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 
 }

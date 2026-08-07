@@ -9,9 +9,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import mujahid_2411869.Announcement;
+import mujahid_2411869.ExecutiveDirector;
+import mujahid_2411869.ResearchOfficer;
 import oop.practice.tiboopproject.HelloApplication;
+import oop.practice.tiboopproject.User;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class AnnouncementDashboardControllerED
 {
@@ -37,8 +41,19 @@ public class AnnouncementDashboardControllerED
         announcementDateTC.setCellValueFactory(new PropertyValueFactory<>("announcementDate"));
     }
 
-    private int directorId;
-    public void receiveObjectFromExecutiveDirectoryDashboardControllerED(int id){this.directorId=id;}
+    private ExecutiveDirector loggedInUser;
+    public void receivedUserObject(ExecutiveDirector user) {
+        loggedInUser = user;
+        loadTable();
+    }
+
+    public void loadTable(){
+        ArrayList<Announcement> dataToLoad= loggedInUser.readAnnouncementObject();
+
+        for (Announcement a: dataToLoad){
+            executiveAnnouncementTV.getItems().add(a);
+        }
+    }
 
     @javafx.fxml.FXML
     public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
@@ -49,7 +64,7 @@ public class AnnouncementDashboardControllerED
             newStage.setTitle("Executive Directory Dashboard");
             newStage.setScene(scene);
             ExecutiveDirectoryDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromLoginController(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {
@@ -66,7 +81,7 @@ public class AnnouncementDashboardControllerED
             newStage.setTitle("New Announcement");
             newStage.setScene(scene);
             AnnouncementCreationControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromAnnouncementDashboardControllerED(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
         } catch (Exception e) {
             //

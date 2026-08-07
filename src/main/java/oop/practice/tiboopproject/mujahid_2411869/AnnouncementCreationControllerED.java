@@ -34,8 +34,10 @@ public class AnnouncementCreationControllerED
         targetAudienceCMB.getItems().addAll("Research Officer","Volunteer");
     }
 
-    private int directorId;
-    public void receiveObjectFromAnnouncementDashboardControllerED(int id){this.directorId=id;}
+    private ExecutiveDirector loggedInUser;
+    public void receivedUserObject(ExecutiveDirector user) {
+        loggedInUser = user;
+    }
 
     @javafx.fxml.FXML
     public void sendAnnouncementButtonOA(ActionEvent actionEvent) {
@@ -50,24 +52,13 @@ public class AnnouncementCreationControllerED
             return;
         }
 
+
         String title = announcementTitleTF.getText();
         String authorName =authorNameTF.getText();
         String targetAudience=targetAudienceCMB.getValue();
         String messageBody= messageBodyTF.getText();
 
-        Announcement newAnnouncement= new Announcement(
-                LocalDate.now(),
-                authorName,
-                title,
-                targetAudience,
-                messageBody
-        );
-
-        //ExecutiveDirector director = new ExecutiveDirector();
-        //boolean success = director.sendAnnouncement(newAnnouncement);
-
-
-
+        Announcement createdAnnouncement=loggedInUser.createAnnouncement(authorName,title,targetAudience,messageBody);
 
 
     }
@@ -81,7 +72,7 @@ public class AnnouncementCreationControllerED
             newStage.setTitle("Executive Directory Dashboard");
             newStage.setScene(scene);
             ExecutiveDirectoryDashboardControllerED nextController = fxmlLoader.getController();
-            nextController.receiveObjectFromLoginController(directorId);
+            nextController.receivedUserObject((ExecutiveDirector) loggedInUser);
             newStage.show();
 
         } catch (Exception e) {

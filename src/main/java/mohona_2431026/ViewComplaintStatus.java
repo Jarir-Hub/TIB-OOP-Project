@@ -4,10 +4,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.EOFException;
 import java.io.FileInputStream;
@@ -40,18 +45,13 @@ public class ViewComplaintStatus {
     @FXML
     public void initialize() {
 
-<<<<<<< HEAD
-        complaintIdColumn.setCellValueFactory(
-                new PropertyValueFactory<>("complaintId"));
-=======
+
+        complaintIdColumn.setCellValueFactory(new PropertyValueFactory<>("complaintId"));
         complaintIdColumn.setCellValueFactory(new PropertyValueFactory<>("ComplaintID"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("complaint title"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("submissiondate"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("current status"));
->>>>>>> 1e63e31e4bd1cc39f97a314e53a09534c805185f
-
-        titleColumn.setCellValueFactory(
-                new PropertyValueFactory<>("title"));
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         dateColumn.setCellValueFactory(
                 new PropertyValueFactory<>("submissionDate"));
@@ -138,7 +138,15 @@ public class ViewComplaintStatus {
     @FXML
     public void backButton(ActionEvent actionEvent) {
 
-        // Scene change code here
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ComplaintOfficerDashboard.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
 
     }
 
