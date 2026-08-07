@@ -6,15 +6,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.Locale;
 
-public class ViewAwarenessCampaign
+public class ViewAwarenessCampaign implements Serializable
 {
     @javafx.fxml.FXML
     private TextField searchCampaignTextField;
@@ -26,6 +27,8 @@ public class ViewAwarenessCampaign
     private TableColumn<awarenessmodel,Integer> campaignIdColumn;
     @javafx.fxml.FXML
     private TableView<awarenessmodel> campaignTableView;
+    private ObservableList<awarenessmodel>campaignList=
+            FXCollections.observableArrayList();
     @javafx.fxml.FXML
     private TableColumn<awarenessmodel,String>venueColumn;
     @javafx.fxml.FXML
@@ -93,10 +96,10 @@ public class ViewAwarenessCampaign
     @javafx.fxml.FXML
     public void searchButton(ActionEvent actionEvent) {
 
-        string title = searchCampaignTextField.getText().trim()
-        observableList<awarenessmodel>searchList = FXCollections.observableArrayList();
-         for(awarenessmodel a : CampaignList){
-             if(a.getCampaignTitle().toLowerCase(Locale.ROOT).contains(title.tolowercase())){
+        String title = searchCampaignTextField.getText().trim()
+        ObservableList<awarenessmodel>searchList = FXCollections.observableArrayList();
+         for(awarenessmodel a : campaignList){
+             if(a.getCampaignTitle().toLowerCase(Locale.ROOT).contains(title.toLowerCase())){
                  searchList.add(a):
 
              }
