@@ -3,22 +3,27 @@ package mohona_2431026;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class complaintstatusclass {
+
+public class complaintstatusclass implements Serializable {
     private int complaintId;
     private String title;
-    private LocalDate date;
+    private String description;
+    private String location;
+    private String citizenName;
+    private LocalDate submissionDate;
     private String status;
-    private String details;
 
     public complaintstatusclass() {
     }
 
-    public complaintstatusclass(int complaintId, LocalDate date, String title, String status, String details) {
+    public complaintstatusclass(int complaintId, String title, String description, String location, String citizenName, LocalDate submissionDate, String status) {
         this.complaintId = complaintId;
-        this.date = date;
         this.title = title;
+        this.description = description;
+        this.location = location;
+        this.citizenName = citizenName;
+        this.submissionDate = submissionDate;
         this.status = status;
-        this.details = details;
     }
 
     public int getComplaintId() {
@@ -37,12 +42,36 @@ public class complaintstatusclass {
         this.title = title;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getCitizenName() {
+        return citizenName;
+    }
+
+    public void setCitizenName(String citizenName) {
+        this.citizenName = citizenName;
+    }
+
+    public LocalDate getSubmissionDate() {
+        return submissionDate;
+    }
+
+    public void setSubmissionDate(LocalDate submissionDate) {
+        this.submissionDate = submissionDate;
     }
 
     public String getStatus() {
@@ -53,22 +82,16 @@ public class complaintstatusclass {
         this.status = status;
     }
 
-    public String getDetails() {
-        return details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
-    }
-
     @Override
     public String toString() {
         return "complaintstatusclass{" +
                 "complaintId=" + complaintId +
                 ", title='" + title + '\'' +
-                ", date=" + date +
+                ", description='" + description + '\'' +
+                ", location='" + location + '\'' +
+                ", citizenName='" + citizenName + '\'' +
+                ", submissionDate=" + submissionDate +
                 ", status='" + status + '\'' +
-                ", details='" + details + '\'' +
                 '}';
     }
 }
