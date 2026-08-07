@@ -3,30 +3,67 @@ package mujahid_2411869;
 import java.time.LocalDate;
 
 public class Policy {
-    private String policyId; // {unique}
+    private final long policyId;
     private String policyName; // {unique}
     private String category;
     private String policyText;
     private LocalDate effectiveDate;
-    private String status;
 
-    public boolean draftPolicy(String name, String category, String text, LocalDate effectiveDate) {
-        // TODO: Implement logic
-        return false;
+    public Policy(String policyName, String category, String policyText, LocalDate effectiveDate) {
+        this.policyId = System.currentTimeMillis();
+        this.policyName = policyName;
+        this.category = category;
+        this.policyText = policyText;
+        this.effectiveDate = effectiveDate;
     }
 
-    public boolean savePolicyRecord() {
-        // TODO: Implement logic
-        return false;
+    public long getPolicyId() {
+        return policyId;
     }
 
-    private boolean verifyPolicyNameUnique(String name) {
-        // TODO: Implement logic
-        return false;
+    public String getPolicyName() {
+        return policyName;
     }
 
-    public boolean validateEffectiveDateCurrentOrFuture(LocalDate date) {
-        // TODO: Implement logic
-        return false;
+    public void setPolicyName(String policyName) {
+        this.policyName = policyName;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getPolicyText() {
+        return policyText;
+    }
+
+    public void setPolicyText(String policyText) {
+        this.policyText = policyText;
+    }
+
+    public LocalDate getEffectiveDate() {
+        return effectiveDate;
+    }
+
+    public void setEffectiveDate(LocalDate effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Policy{" +
+                "policyId=" + policyId +
+                ", policyName='" + policyName + '\'' +
+                ", category='" + category + '\'' +
+                ", policyText='" + policyText + '\'' +
+                ", effectiveDate=" + effectiveDate +
+                '}';
+    }
+
+
 }

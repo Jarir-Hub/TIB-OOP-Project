@@ -17,7 +17,7 @@
             <TableColumn fx:id="policyNameTC" minWidth="0.0" prefWidth="197.73135375976562" text="Policy Name" />
             <TableColumn fx:id="categoryTC" prefWidth="156.8955078125" text="Category" />
             <TableColumn fx:id="effectiveDateTC" minWidth="0.0" prefWidth="148.29849243164062" text="Effective Date" />
-            <TableColumn fx:id="statusTC" prefWidth="121.07464599609375" text="Status" />
+            <TableColumn fx:id="descriptionTC" minWidth="0.0" prefWidth="118.20891565096463" text="Description" />
          </columns>
       </TableView>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: cyan;" text="Policy Dashboard">

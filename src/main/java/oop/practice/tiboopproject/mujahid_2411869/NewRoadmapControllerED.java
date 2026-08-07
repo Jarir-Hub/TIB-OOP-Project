@@ -40,7 +40,7 @@ public class NewRoadmapControllerED
     @javafx.fxml.FXML
     public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("oop.practice.tiboopproject.mujahid_2411869.executiveDirectoryDashboardControllerED"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("oop.practice.tiboopproject.mujahid_2411869.ExecutiveDirectoryDashboardControllerED"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage newStage = new Stage();
             newStage.setTitle("Executive Directory Dashboard");

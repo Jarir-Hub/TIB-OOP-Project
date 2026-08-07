@@ -3,18 +3,17 @@ package oop.practice.tiboopproject.mujahid_2411869;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import mujahid_2411869.ExecutiveDirector;
 import oop.practice.tiboopproject.HelloApplication;
 
+import java.time.LocalDate;
+
 public class PolicyCreationControllerED
 {
     @javafx.fxml.FXML
-    private ComboBox categoryCMB;
+    private ComboBox <String> categoryCMB;
     @javafx.fxml.FXML
     private TextField policyNameTF;
     @javafx.fxml.FXML
@@ -26,6 +25,7 @@ public class PolicyCreationControllerED
 
     @javafx.fxml.FXML
     public void initialize() {
+        categoryCMB.getItems().addAll("Executive","HR","Finance","Logistic");
     }
 
     private ExecutiveDirector loggedInUser;
@@ -36,7 +36,7 @@ public class PolicyCreationControllerED
     @javafx.fxml.FXML
     public void executiveDirectoryButtonOA(ActionEvent actionEvent) {
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("oop.practice.tiboopproject.mujahid_2411869.executiveDirectoryDashboardControllerED"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("oop.practice.tiboopproject.mujahid_2411869.ExecutiveDirectoryDashboardControllerED"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage newStage = new Stage();
             newStage.setTitle("Executive Directory Dashboard");
@@ -49,8 +49,17 @@ public class PolicyCreationControllerED
             //
         }
     }
-
+    Alert alert=new Alert(Alert.AlertType.INFORMATION);
     @javafx.fxml.FXML
     public void publishPolicyButtonOA(ActionEvent actionEvent) {
+        if (effectiveDateDP.getValue().isBefore(LocalDate.now())){
+            alert.setContentText("Effective Date can't be Past Date");
+            alert.showAndWait();
+            return;
+        }
+
+        loggedInUser.createPolicy(policyNameTF.getText(),
+                categoryCMB.getValue(),policyDescriptionTF.getText(),effectiveDateDP.getValue());
+
     }
 }

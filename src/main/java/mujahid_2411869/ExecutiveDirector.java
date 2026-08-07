@@ -180,10 +180,67 @@ public class ExecutiveDirector extends User implements Serializable {
     }
 
 
-    /*
-    public boolean publishPolicy(Policy policyData){
+
+    public Policy createPolicy(String policyName, String category, String policyText, LocalDate effectiveDate){
+        Policy newPolicy= new Policy(policyName,category,policyText,effectiveDate);
+        publishPolicy(newPolicy);
+        return newPolicy;
     }
 
+    public boolean publishPolicy(Policy policyData){
+        File file= new File("PolicyData.bin");
+
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+
+        try{
+            if (file.exists()){
+                fos= new FileOutputStream(file,true);
+                oos= new AppendableObjectOutputStream(fos);
+            }
+            else {
+                fos=new FileOutputStream(file);
+                oos=new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(policyData);
+            oos.close();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    public ArrayList<Policy> readPolicyObject(){
+        ArrayList<Policy> policyList = new ArrayList<>();
+        File file= new File("PolicyData.bin");
+
+        try{
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true){
+                try{
+                    Policy a= (Policy) ois.readObject();
+                    policyList.add(a);
+
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                    ois.close();
+                    break;
+                }
+            }
+        }
+        catch (Exception e) {
+            //
+        }
+        return policyList;
+    }
+    /*
     public boolean executeAgreement(MoU mouData){
     }
 
