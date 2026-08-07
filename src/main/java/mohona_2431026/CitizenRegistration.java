@@ -66,7 +66,7 @@ public class CitizenRegistration {
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
 
-        // Event-4 : Required field validation
+
         if (name.isEmpty() || nid.isEmpty() || phone.isEmpty()
                 || email.isEmpty() || address.isEmpty()
                 || username.isEmpty() || password.isEmpty()
@@ -79,7 +79,6 @@ public class CitizenRegistration {
             return;
         }
 
-        // Password Match Check
         if (!password.equals(confirmPassword)) {
 
             showAlert(Alert.AlertType.ERROR,
@@ -89,7 +88,6 @@ public class CitizenRegistration {
             return;
         }
 
-        // Event-5 : Email already exists
         if (emailExists(email)) {
 
             showAlert(Alert.AlertType.ERROR,
@@ -99,7 +97,7 @@ public class CitizenRegistration {
             return;
         }
 
-        // Event-6
+
         Citizen citizen = new Citizen(
                 username,
                 password,
@@ -131,7 +129,7 @@ public class CitizenRegistration {
                 aoos.close();
             }
 
-            // Event-7
+
             showAlert(Alert.AlertType.INFORMATION,
                     "Success",
                     "Citizen account registered successfully.");
@@ -179,19 +177,7 @@ public class CitizenRegistration {
     @FXML
     public void backButton(ActionEvent actionEvent) {
 
-        System.out.println("Back Button Clicked");
 
-    }
-
-    private void showAlert(Alert.AlertType type,
-                           String title,
-                           String message) {
-
-        Alert alert = new Alert(type);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 
 }

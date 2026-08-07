@@ -11,16 +11,17 @@ public class awarenessmodel implements Serializable {
     private String venue;
     private String campaignDetails;
 
+
     public awarenessmodel() {
     }
 
-    public awarenessmodel(int campaignId, String campaignTitle, String campaignType, LocalDate campaignDate, String campaignDetails, String venue) {
+    public awarenessmodel(int campaignId, String campaignTitle, String campaignType, LocalDate campaignDate, String venue, String campaignDetails) {
         this.campaignId = campaignId;
         this.campaignTitle = campaignTitle;
         this.campaignType = campaignType;
         this.campaignDate = campaignDate;
-        this.campaignDetails = campaignDetails;
         this.venue = venue;
+        this.campaignDetails = campaignDetails;
     }
 
     public int getCampaignId() {
@@ -31,20 +32,20 @@ public class awarenessmodel implements Serializable {
         this.campaignId = campaignId;
     }
 
-    public String getCampaignType() {
-        return campaignType;
-    }
-
-    public void setCampaignType(String campaignType) {
-        this.campaignType = campaignType;
-    }
-
     public String getCampaignTitle() {
         return campaignTitle;
     }
 
     public void setCampaignTitle(String campaignTitle) {
         this.campaignTitle = campaignTitle;
+    }
+
+    public String getCampaignType() {
+        return campaignType;
+    }
+
+    public void setCampaignType(String campaignType) {
+        this.campaignType = campaignType;
     }
 
     public LocalDate getCampaignDate() {
@@ -81,5 +82,8 @@ public class awarenessmodel implements Serializable {
                 ", venue='" + venue + '\'' +
                 ", campaignDetails='" + campaignDetails + '\'' +
                 '}';
+    }
+
+    public String getOrganizer() {
     }
 }
