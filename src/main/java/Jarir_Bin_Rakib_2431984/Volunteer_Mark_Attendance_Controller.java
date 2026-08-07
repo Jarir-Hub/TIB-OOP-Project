@@ -1,28 +1,157 @@
 package Jarir_Bin_Rakib_2431984;
 
+import com.sun.jdi.connect.AttachingConnector;
 import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.time.LocalDate;
+import java.util.Locale;
 
 public class Volunteer_Mark_Attendance_Controller
 {
     @javafx.fxml.FXML
-    private TableColumn locationColumn;
+    private TableColumn<Campaign,String> locationColumn;
     @javafx.fxml.FXML
-    private TableColumn campaignTitleColumn;
+    private TableColumn<Campaign,String> campaignTitleColumn;
     @javafx.fxml.FXML
-    private TableView joinedCampaignTableView;
+    private TableView<Campaign> joinedCampaignTableView;
     @javafx.fxml.FXML
-    private TableColumn dateColumn;
+    private TableColumn<Campaign, LocalDate> dateColumn;
     @javafx.fxml.FXML
-    private TableColumn attendanceStatusColumn;
+    private ComboBox<String> selectYourCampaignCombobox;
+
+    private int volunteerID;
+    public void receiveVolunteerID(int id){
+        this.volunteerID=id;
+    }
+
+    public Campaign getCampaign(String title){
+        FileInputStream fis=null;
+        ObjectInputStream ois=null;
+        try {
+            File f=new File("CampaignInfo.bin");
+            if (f.exists()){
+                fis=new FileInputStream(f);
+                ois=new ObjectInputStream(fis);
+            }
+            else {
+                //
+            }
+            while (true){
+                Campaign campaign=(Campaign) ois.readObject();
+                if (campaign.getCampaignTitle().equals(title)){
+                    return campaign;
+                }
+
+            }
+
+
+        }
+        catch (Exception e){
+            try {
+                if (ois!=null){
+                    ois.close();
+                }
+            }
+            catch (Exception e1){
+                //
+            }
+        }
+        return null;
+    }
+
 
     @javafx.fxml.FXML
     public void initialize() {
+        //String campaignTitle, LocalDate campaignDate, String location, String attendanceStatus
+        campaignTitleColumn.setCellValueFactory(new PropertyValueFactory<Campaign,String>("campaignTitle"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<Campaign,LocalDate>("campaignDate"));
+        locationColumn.setCellValueFactory(new PropertyValueFactory<Campaign,String>("location"));
+        //attendanceStatusColumn.setCellValueFactory(new PropertyValueFactory<Attendance,String>("attendanceStatus"));
+
+
+        FileInputStream fis=null;
+        ObjectInputStream ois=null;
+        try {
+            File f=new File("CampaignRequestInfo.bin");
+            if (f.exists()){
+                fis=new FileInputStream(f);
+                ois=new ObjectInputStream(fis);
+            }
+            else {
+                //
+            }
+            while (true){
+                VolunteerCampaignRequest request=(VolunteerCampaignRequest) ois.readObject();
+                if (request.getVolunteerId()==volunteerID && request.getStatus().equals("Approved") ){
+                    Campaign campaignObj=getCampaign(request.getCampaignTitle());
+                    joinedCampaignTableView.getItems().add(campaignObj);
+                    selectYourCampaignCombobox.getItems().add(request.getCampaignTitle());
+                }
+
+                }
     }
+        catch (Exception e){
+            try {
+                if (ois!=null){
+                    ois.close();
+                }
+            }
+            catch (Exception e1){
+                //
+            }
+        }
+    }
+
+    public boolean isAlreadyMarked(int id,String title){
+        FileInputStream fis=null;
+        ObjectInputStream ois=null;
+        try {
+            File f=new File("AttendanceInfo.bin");
+            if (f.exists()){
+                fis=new FileInputStream(f);
+                ois=new ObjectInputStream(fis);
+            }
+            else {
+                //
+            }
+            while (true){
+                Attendance attendance=(Attendance) ois.readObject();
+                if (attendance.getVolunteerID()==id && attendance.getCampaignTitle().equals(title)){
+                    return true;
+                }
+
+                }
+
+            }
+        catch (Exception e){
+            try {
+                if (ois!=null){
+                    ois.close();
+                }
+            }
+            catch (Exception e1){
+                //
+            }
+        }
+        return false;
+    }
+
+
+
+
+
 
     @javafx.fxml.FXML
     public void markAttendanceButton(ActionEvent actionEvent) {
+        String campaignTitle=selectYourCampaignCombobox.getValue();
+        if (isAlreadyMarked(volunteerID,))
     }
 
     @javafx.fxml.FXML

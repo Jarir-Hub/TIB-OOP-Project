@@ -70,6 +70,15 @@ public class Volunteer_DashBoard_Controller
 
     @javafx.fxml.FXML
     public void markCampaignAttendanceButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("volunteer_mark_attendance.fxml"));
+            dasboardBorderPane.setCenter(fxmlLoader.load());
+            Volunteer_Mark_Attendance_Controller nextController=fxmlLoader.getController();
+            nextController.receiveVolunteerID(volunteerLoggedID);
+        }
+        catch (Exception e){
+            //
+        }
     }
     private int volunteerLoggedID;
 

@@ -6,6 +6,7 @@ module oop.practice.tiboopproject {
 =======
     requires javafx.graphics;
     requires oop.practice.tiboopproject;
+    requires jdk.jdi;
 
 >>>>>>> 6fca22a7ada5adb27c53862c24212371d8458a4d
 
