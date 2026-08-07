@@ -5,8 +5,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import user.User;
-import user.UserReceiver;
+import oop.practice.tiboopproject.User;
+import utility.UserReceiver;
 
 import java.io.IOException;
 

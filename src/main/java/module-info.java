@@ -1,30 +1,35 @@
 module oop.practice.tiboopproject {
     requires javafx.controls;
     requires javafx.fxml;
-<<<<<<< HEAD
-    requires java.desktop;
-=======
     requires javafx.graphics;
+<<<<<<< HEAD
     requires oop.practice.tiboopproject;
     requires jdk.jdi;
+=======
+    requires java.desktop;
+>>>>>>> 7146a75f3157cad99e314a620e7d881eaac0b2a0
 
->>>>>>> 6fca22a7ada5adb27c53862c24212371d8458a4d
-
-
-    opens oop.practice.tiboopproject to javafx.fxml;
+    // Main package (Contains HelloApplication, HelloController, User.java, etc.)
     exports oop.practice.tiboopproject;
+    opens oop.practice.tiboopproject to javafx.fxml;
+
+    // Sub-packages inside oop.practice.tiboopproject
+    exports oop.practice.tiboopproject.mujahid_2411869;
+    opens oop.practice.tiboopproject.mujahid_2411869 to javafx.fxml;
+
+    exports oop.practice.tiboopproject.prianka_2412456;
+    opens oop.practice.tiboopproject.prianka_2412456 to javafx.fxml;
+
+    // Top-level packages under src/main/java
     exports Jarir_Bin_Rakib_2431984;
     opens Jarir_Bin_Rakib_2431984 to javafx.fxml;
 
     exports mohona_2431026;
     opens mohona_2431026 to javafx.fxml;
 
-    exports user;
-    opens user to javafx.fxml;
-<<<<<<< HEAD
-    exports mohona_2431026;
-    opens mohona_2431026 to javafx.fxml;
-=======
+    exports mujahid_2411869;
+    opens mujahid_2411869 to javafx.fxml;
 
->>>>>>> 6fca22a7ada5adb27c53862c24212371d8458a4d
+    exports prianka_2412456;
+    opens prianka_2412456 to javafx.fxml;
 }

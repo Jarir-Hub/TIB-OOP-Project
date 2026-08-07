@@ -1,71 +1,117 @@
 package mohona_2431026;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.awt.*;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import java.time.LocalDate;
 
-public class ViewComplaintStatus
-{
+public class ViewComplaintStatus {
+
     @FXML
-    private TableColumn titleColumn;
+    private TableView<complaintstatusclass> complaintTable;
+
     @FXML
-    private TableColumn statusColumn;
+    private TableColumn<complaintstatusclass, Integer> complaintIdColumn;
+
+    @FXML
+    private TableColumn<complaintstatusclass, String> titleColumn;
+
+    @FXML
+    private TableColumn<complaintstatusclass, LocalDate> dateColumn;
+
+    @FXML
+    private TableColumn<complaintstatusclass, String> statusColumn;
+
     @FXML
     private TextArea detailsTextArea;
-    @FXML
-    private TableView complaintTable;
-    @FXML
-    private TableColumn dateColumn;
-    @FXML
-    private TableColumn complaintIdColumn;
+
+    ObservableList<complaintstatusclass> complaintList =
+            FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
 
-        complaintIdColumn.setCellValueFactory(new PropertyValueFactory<>("ComplaintID").);
+<<<<<<< HEAD
+        complaintIdColumn.setCellValueFactory(
+                new PropertyValueFactory<>("complaintId"));
+=======
+        complaintIdColumn.setCellValueFactory(new PropertyValueFactory<>("ComplaintID"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("complaint title"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("submissiondate"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("current status"));
+>>>>>>> 1e63e31e4bd1cc39f97a314e53a09534c805185f
 
-        loadcomplaints():
+        titleColumn.setCellValueFactory(
+                new PropertyValueFactory<>("title"));
 
-        complaintTable.getSelectionModel().selectedItemProperty().addListener(("(observable, oldValue, selectedComplaint) -> {
-        boolean selectedcomplaint;
+        dateColumn.setCellValueFactory(
+                new PropertyValueFactory<>("submissionDate"));
 
+        statusColumn.setCellValueFactory(
+                new PropertyValueFactory<>("status"));
 
-          if  complaintstatusclass selectedComplaint = null;{
-            detailsTextArea.setText(
-                    "Complaint ID : " + selectedComplaint.getComplaintId()
-                            + "\n\nTitle : " + selectedComplaint.getTitle()
-                            + "\n\nDescription : " + selectedComplaint.getDescription()
-                            + "\n\nLocation : " + selectedComplaint.getLocation()
-                            + "\n\nCitizen Name : " + selectedComplaint.getCitizenName()
-                            + "\n\nSubmission Date : " + selectedComplaint.getSubmissionDate()
-                            + "\n\nStatus : " + selectedComplaint.getStatus()
+        loadComplaints();
 
+        complaintTable.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, selectedComplaint) -> {
 
-            )
-        }
-                ));
+                    if (selectedComplaint != null) {
+
+                        detailsTextArea.setText(
+
+                                "Complaint ID : "
+                                        + selectedComplaint.getComplaintId()
+
+                                        + "\n\nTitle : "
+                                        + selectedComplaint.getTitle()
+
+                                        + "\n\nDescription : "
+                                        + selectedComplaint.getDescription()
+
+                                        + "\n\nLocation : "
+                                        + selectedComplaint.getLocation()
+
+                                        + "\n\nCitizen Name : "
+                                        + selectedComplaint.getCitizenName()
+
+                                        + "\n\nSubmission Date : "
+                                        + selectedComplaint.getSubmissionDate()
+
+                                        + "\n\nStatus : "
+                                        + selectedComplaint.getStatus()
+
+                        );
+
+                    }
+
+                });
+
     }
 
-    private void loadcomplaints() {
+    private void loadComplaints() {
 
         complaintList.clear();
+
         try {
 
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Complaint.bin"));
+            ObjectInputStream ois =
+                    new ObjectInputStream(
+                            new FileInputStream("Complaint.bin"));
 
             while (true) {
 
-                Complaint complaint = (Complaint) ois.readObject();
+                complaintstatusclass complaint =
+                        (complaintstatusclass) ois.readObject();
+
                 complaintList.add(complaint);
 
             }
@@ -81,7 +127,6 @@ public class ViewComplaintStatus
         complaintTable.setItems(complaintList);
 
     }
-    }
 
     @FXML
     public void refreshButton(ActionEvent actionEvent) {
@@ -92,5 +137,9 @@ public class ViewComplaintStatus
 
     @FXML
     public void backButton(ActionEvent actionEvent) {
+
+        // Scene change code here
+
     }
+
 }

@@ -69,7 +69,7 @@ public class logInController
         user = searchUser("CitizenInfo.bin", id, password);
         if(user != null) return user;
 
-        user = searchUser("StrategicDirectorInfo.bin", id, password);
+        user = searchUser("ExecutiveDirectorInfo.bin", id, password);
         if(user != null) return user;
 
         user = searchUser("ResearchOfficerInfo.bin", id, password);

@@ -14,19 +14,19 @@ public class ComplaintSubmission {
     private TextField titleTextField;
 
     @FXML
-    private TextField attachmentTextField;
-
-    @FXML
     private ComboBox<String> categoryComboBox;
 
     @FXML
     private TextArea descriptionTextArea;
 
     @FXML
+    private TextArea locationarea;
+
+    @FXML
     private DatePicker submissionDatePicker;
 
     @FXML
-    private TextArea locationarea;
+    private TextField attachmentTextField;
 
     File file = new File("Complaint.bin");
 
@@ -47,63 +47,54 @@ public class ComplaintSubmission {
     }
 
     @FXML
-    public void browsebutton(ActionEvent actionEvent) {
+    public void browsebutton(ActionEvent event) {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setContentText("File browsing can be implemented later.");
+        alert.setContentText("Browse option will be added later.");
         alert.showAndWait();
 
     }
 
     @FXML
-    public void backButton(ActionEvent actionEvent) {
-
-    }
-
-    @FXML
-    public void submitbutton(ActionEvent actionEvent) {
-
-        // Validation
+    public void submitbutton(ActionEvent event) {
 
         if(titleTextField.getText().isEmpty()
                 || categoryComboBox.getValue()==null
                 || descriptionTextArea.getText().isEmpty()
-                || locationarea.getText().isEmpty()
-                || submissionDatePicker.getValue()==null){
+                || locationarea.getText().isEmpty()){
 
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Please fill all mandatory fields.");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Please fill all required fields.");
             alert.showAndWait();
             return;
+
         }
 
-        int complaintID = new Random().nextInt(900000)+100000;
+        int id = new Random().nextInt(900000)+100000;
 
-        Complaint complaint = new Complaint(
+        SubmissionModel complaint = new SubmissionModel();
 
-                complaintID,
-                titleTextField.getText(),
-                categoryComboBox.getValue(),
-                descriptionTextArea.getText(),
-                locationarea.getText(),
-                attachmentTextField.getText(),
-                submissionDatePicker.getValue(),
-                "Pending"
-
-        );
+        complaint.setComplaintId(id);
+        complaint.setTitle(titleTextField.getText());
+        complaint.setCategory(categoryComboBox.getValue());
+        complaint.setDescription(descriptionTextArea.getText());
+        complaint.setLocation(locationarea.getText());
+        complaint.setSubmissionDate(submissionDatePicker.getValue());
+        complaint.setAttachment(attachmentTextField.getText());
+        complaint.setStatus("Pending");
 
         saveComplaint(complaint);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Complaint Submitted Successfully");
-        alert.setContentText("Complaint ID : " + complaintID);
+        alert.setHeaderText("Success");
+        alert.setContentText("Complaint Submitted.\nComplaint ID : " + id);
         alert.showAndWait();
 
         resetbutton(null);
 
     }
 
-    private void saveComplaint(Complaint complaint){
+    private void saveComplaint(SubmissionModel complaint){
 
         try{
 
@@ -111,17 +102,19 @@ public class ComplaintSubmission {
 
             if(file.exists()){
 
-                oos=new AppendableObjectOutputStream(new FileOutputStream(file,true));
+                oos = new AppendableObjectOutputStream(
+                        new FileOutputStream(file,true));
 
             }
+
             else{
 
-                oos=new ObjectOutputStream(new FileOutputStream(file));
+                oos = new ObjectOutputStream(
+                        new FileOutputStream(file));
 
             }
 
             oos.writeObject(complaint);
-
             oos.close();
 
         }
@@ -135,14 +128,21 @@ public class ComplaintSubmission {
     }
 
     @FXML
-    public void resetbutton(ActionEvent actionEvent) {
+    public void resetbutton(ActionEvent event){
 
         titleTextField.clear();
-        attachmentTextField.clear();
+        categoryComboBox.setValue(null);
         descriptionTextArea.clear();
         locationarea.clear();
-        categoryComboBox.setValue(null);
+        attachmentTextField.clear();
         submissionDatePicker.setValue(LocalDate.now());
+
+    }
+
+    @FXML
+    public void backButton(ActionEvent event){
+
+        System.out.println("Back Button Clicked");
 
     }
 

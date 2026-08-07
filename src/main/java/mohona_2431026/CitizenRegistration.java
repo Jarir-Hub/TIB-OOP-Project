@@ -1,46 +1,197 @@
 package mohona_2431026;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class CitizenRegistration
-{
-    @javafx.fxml.FXML
+import java.io.*;
+
+public class CitizenRegistration {
+
+    @FXML
     private TextField nidTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField phoneTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField emailTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField usertextffield;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField nameTextField;
-    @javafx.fxml.FXML
+
+    @FXML
     private TextField addressTextArea;
 
-    @javafx.fxml.FXML
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private PasswordField confirmPasswordField;
+
+    private final String FILE_NAME = "Citizen.bin";
+
+    @FXML
     public void initialize() {
+
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void clearButton(ActionEvent actionEvent) {
+
+        nameTextField.clear();
+        nidTextField.clear();
+        phoneTextField.clear();
+        emailTextField.clear();
+        addressTextArea.clear();
+        usertextffield.clear();
+        passwordField.clear();
+        confirmPasswordField.clear();
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void registerButton(ActionEvent actionEvent) {
 
+        String name = nameTextField.getText();
+        String nid = nidTextField.getText();
+        String phone = phoneTextField.getText();
+        String email = emailTextField.getText();
+        String address = addressTextArea.getText();
+        String username = usertextffield.getText();
+        String password = passwordField.getText();
+        String confirmPassword = confirmPasswordField.getText();
+
+
+        if (name.isEmpty() || nid.isEmpty() || phone.isEmpty()
+                || email.isEmpty() || address.isEmpty()
+                || username.isEmpty() || password.isEmpty()
+                || confirmPassword.isEmpty()) {
+
+            showAlert(Alert.AlertType.ERROR,
+                    "Registration Failed",
+                    "Please fill up all required fields.");
+
+            return;
+        }
+
+
+        if (!password.equals(confirmPassword)) {
+
+            showAlert(Alert.AlertType.ERROR,
+                    "Registration Failed",
+                    "Password and Confirm Password do not match.");
+
+            return;
+        }
+
+
+        if (emailExists(email)) {
+
+            showAlert(Alert.AlertType.ERROR,
+                    "Registration Failed",
+                    "This email is already registered.");
+
+            return;
+        }
+
+        // Event-6
+        Citizen citizen = new Citizen(
+                username,
+                password,
+                name,
+                nid,
+                phone,
+                email,
+                address
+        );
+
+        try {
+
+            File file = new File(FILE_NAME);
+
+            if (!file.exists()) {
+
+                ObjectOutputStream oos =
+                        new ObjectOutputStream(new FileOutputStream(file));
+
+                oos.writeObject(citizen);
+                oos.close();
+
+            } else {
+
+                AppendableObjectOutputStream aoos =
+                        new AppendableObjectOutputStream(new FileOutputStream(file, true));
+
+                aoos.writeObject(citizen);
+                aoos.close();
+            }
+
+            // Event-7
+            showAlert(Alert.AlertType.INFORMATION,
+                    "Success",
+                    "Citizen account registered successfully.");
+
+            clearButton(null);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
-    @javafx.fxml.FXML
+    private boolean emailExists(String email) {
+
+        File file = new File(FILE_NAME);
+
+        if (!file.exists()) {
+            return false;
+        }
+
+        try {
+
+            ObjectInputStream ois =
+                    new ObjectInputStream(new FileInputStream(file));
+
+            while (true) {
+
+                Citizen c = (Citizen) ois.readObject();
+
+                if (c.getEmail().equalsIgnoreCase(email)) {
+                    ois.close();
+                    return true;
+                }
+            }
+
+        } catch (EOFException e) {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    @FXML
     public void backButton(ActionEvent actionEvent) {
+
+        System.out.println("Back Button Clicked");
+
     }
 
-    @javafx.fxml.FXML
-    public void passwordField(ActionEvent actionEvent) {
+    private void showAlert(Alert.AlertType type,
+                           String title,
+                           String message) {
+
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
-    @javafx.fxml.FXML
-    public void confirmPasswordField(ActionEvent actionEvent) {
-    }
 }
-

@@ -2,14 +2,13 @@ package Jarir_Bin_Rakib_2431984;
 
 import com.sun.jdi.connect.AttachingConnector;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.Locale;
 
@@ -66,7 +65,7 @@ public class Volunteer_Mark_Attendance_Controller
         return null;
     }
 
-
+    Alert alert=new Alert(Alert.AlertType.ERROR);
     @javafx.fxml.FXML
     public void initialize() {
         //String campaignTitle, LocalDate campaignDate, String location, String attendanceStatus
@@ -75,7 +74,7 @@ public class Volunteer_Mark_Attendance_Controller
         locationColumn.setCellValueFactory(new PropertyValueFactory<Campaign,String>("location"));
         //attendanceStatusColumn.setCellValueFactory(new PropertyValueFactory<Attendance,String>("attendanceStatus"));
 
-
+        joinedCampaignTableView.getItems().clear();
         FileInputStream fis=null;
         ObjectInputStream ois=null;
         try {
@@ -145,16 +144,55 @@ public class Volunteer_Mark_Attendance_Controller
 
 
 
-
+//int volunteerID, String campaignTitle, LocalDate campaignDate, String location, String attendanceStatus
 
 
     @javafx.fxml.FXML
     public void markAttendanceButton(ActionEvent actionEvent) {
         String campaignTitle=selectYourCampaignCombobox.getValue();
-        if (isAlreadyMarked(volunteerID,))
+        if (isAlreadyMarked(volunteerID,campaignTitle)){
+            alert.setContentText("Already marked");
+            alert.showAndWait();
+            return;
+        }
+        Campaign campaign=getCampaign(campaignTitle);
+        Attendance attendance=new Attendance(
+                volunteerID,
+                campaign.getCampaignTitle(),
+                campaign.getCampaignDate(),
+                campaign.getLocation(),
+                "Marked"
+
+        );
+
+        FileOutputStream fos=null;
+        ObjectOutputStream oos=null;
+        try {
+            File f=new File("AttendanceInfo.bin");
+            if (f.exists()){
+                fos=new FileOutputStream(f,true);
+                oos=new AppendableObjectOutputStream(fos);
+            }
+            else {
+                fos=new FileOutputStream(f);
+                oos=new ObjectOutputStream(fos);
+            }
+            oos.writeObject(attendance);
+            oos.close();
+            selectYourCampaignCombobox.setValue(null);
+
+
+
+        }
+        catch (Exception e){
+            //
+        }
+
+
     }
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
+
     }
 }

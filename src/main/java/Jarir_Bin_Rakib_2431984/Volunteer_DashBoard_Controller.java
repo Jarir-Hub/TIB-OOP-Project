@@ -48,6 +48,15 @@ public class Volunteer_DashBoard_Controller
 
     @javafx.fxml.FXML
     public void submitCampaignFeedbackButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("volunteer_campaign_feedback.fxml"));
+            dasboardBorderPane.setCenter(fxmlLoader.load());
+            Volunteer_Campaign_Feedback_Controller nextController=fxmlLoader.getController();
+            nextController.receiveVolunteerIdFromDashboardController(volunteerLoggedID);
+        }
+        catch (Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML

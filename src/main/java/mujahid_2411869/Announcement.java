@@ -1,31 +1,59 @@
 package mujahid_2411869;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Announcement {
-        private String announcementId; // {unique}
-        private String announcementTitle;
-        private String targetAudience;
-        private String messageBody;
-        private LocalDate announcementDate;
-        private String authorName;
+public class Announcement implements Serializable {
+    final private long announcementId;
+    final private LocalDate announcementDate;
+    final private String authorName;
+    private String announcementTitle;
+    private String targetAudience;
+    private String messageBody;
 
-        public boolean createAnnouncement(String title, String audience, String body) {
-            // TODO: Implement logic
-            return false;
-        }
+    public Announcement( LocalDate announcementDate, String authorName, String announcementTitle, String targetAudience, String messageBody) {
+        this.announcementId = System.currentTimeMillis();
+        this.announcementDate = announcementDate;
+        this.authorName = authorName;
+        this.announcementTitle = announcementTitle;
+        this.targetAudience = targetAudience;
+        this.messageBody = messageBody;
+    }
 
-        public boolean saveToDatabase() {
-            // TODO: Implement logic
-            return false;
-        }
+    public long getAnnouncementId() {
+        return announcementId;
+    }
 
-        public boolean checkTitleNotEmpty(String title) {
-            // TODO: Implement logic///
-            return false;
-        }
+    public LocalDate getAnnouncementDate() {
+        return announcementDate;
+    }
 
-        public boolean verifyBodyLengthGreaterThanTen(String bodyText) {
-            // TODO: Implement logic
-            return false;
-        }
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public String getAnnouncementTitle() {
+        return announcementTitle;
+    }
+
+    public void setAnnouncementTitle(String announcementTitle) {
+        this.announcementTitle = announcementTitle;
+    }
+
+    public String getTargetAudience() {
+        return targetAudience;
+    }
+
+    public void setTargetAudience(String targetAudience) {
+        this.targetAudience = targetAudience;
+    }
+
+    public String getMessageBody() {
+        return messageBody;
+    }
+
+    public void setMessageBody(String messageBody) {
+        this.messageBody = messageBody;
+    }
+
+
 }

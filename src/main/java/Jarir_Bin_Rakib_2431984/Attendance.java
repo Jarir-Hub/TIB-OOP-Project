@@ -9,6 +9,7 @@ public class Attendance implements Serializable {
     private LocalDate campaignDate;
     private String location;
     private String attendanceStatus;
+    //private int total_Attendance;
 
     public Attendance() {
     }

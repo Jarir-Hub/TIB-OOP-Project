@@ -3,9 +3,9 @@ package mohona_2431026;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class submissionmodel implements Serializable{
+public class SubmissionModel implements Serializable{
 
-    private static final long serialVersionUID = 1L;
+
 
     private int complaintId;
     private String title;
@@ -16,7 +16,7 @@ public class submissionmodel implements Serializable{
     private String attachment;
     private String status;
 
-    public submissionmodel() {
+    public SubmissionModel() {
     }
 
     public int getComplaintId() {
@@ -85,7 +85,7 @@ public class submissionmodel implements Serializable{
 
     @Override
     public String toString() {
-        return "submissionmodel{" +
+        return "SubmissionModel{" +
                 "complaintId=" + complaintId +
                 ", title='" + title + '\'' +
                 ", category='" + category + '\'' +
