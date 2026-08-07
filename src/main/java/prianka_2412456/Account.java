@@ -109,8 +109,8 @@ public class Account {
 
     public static boolean ValidateUsernameUnique(String username){
 
-        if (username == null || username.isBlank()) return false;
 
+        return false;
     }
 
 }
