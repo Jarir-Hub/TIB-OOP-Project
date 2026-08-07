@@ -1,43 +1,50 @@
 package prianka_2412456;
 
-import java.time.LocalDate;
+import utility.BinaryFileUtility;
 
-public class AssignmentRecord {
-    int assignmentID;
-    int assetID;
-    int employeeID;
-    LocalDate assignDate;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class AssignmentRecord  implements Serializable {
+    private String assignmentID;
+    private String assetID;
+    private String employeeID;
+    private LocalDate assignDate;
+    private final String handoverConditionNotes;
     LocalDate expectedreturnDate;
 
-    public AssignmentRecord(Integer assignmentID, Integer assetID, Integer employeeID, LocalDate assignDate, LocalDate expectedreturnDate) {
+
+    public AssignmentRecord(String assignmentID, String assetID, String employeeID, LocalDate assignDate, String handoverConditionNotes, LocalDate expectedreturnDate) {
         this.assignmentID = assignmentID;
         this.assetID = assetID;
         this.employeeID = employeeID;
         this.assignDate = assignDate;
+        this.handoverConditionNotes = handoverConditionNotes;
         this.expectedreturnDate = expectedreturnDate;
     }
 
-    public Integer getAssignmentID() {
+    public String getAssignmentID() {
         return assignmentID;
     }
 
-    public void setAssignmentID(Integer assignmentID) {
+    public void setAssignmentID(String assignmentID) {
         this.assignmentID = assignmentID;
     }
 
-    public Integer getAssetID() {
+    public String getAssetID() {
         return assetID;
     }
 
-    public void setAssetID(Integer assetID) {
+    public void setAssetID(String assetID) {
         this.assetID = assetID;
     }
 
-    public Integer getEmployeeID() {
+    public String getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(Integer employeeID) {
+    public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -47,6 +54,10 @@ public class AssignmentRecord {
 
     public void setAssignDate(LocalDate assignDate) {
         this.assignDate = assignDate;
+    }
+
+    public String getHandoverConditionNotes() {
+        return handoverConditionNotes;
     }
 
     public LocalDate getExpectedreturnDate() {
@@ -59,8 +70,19 @@ public class AssignmentRecord {
 
 
 
-    public boolean validateEmployeeActive(){
+    public boolean validateEmployeeActive() {
+        ArrayList<Object> accounts = BinaryFileUtility.readObjects("asset.bin");
 
+        for (Object obj : accounts) {
+            try {
+                Asset asset = (Asset) obj;
+                if (asset.getAssetID().equals(assetID) && "Active".equalsIgnoreCase(asset.getStatus())) {
+                    return true;
+                }
+            } catch (ClassCastException e) {
+                // obj wasn't an Account, skip it
+            }
+        }
         return false;
     }
 }
