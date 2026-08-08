@@ -21,6 +21,10 @@ public class ReturnRecord implements Serializable {
         this.returnDate = returnDate;
     }
 
+    public ReturnRecord() {
+
+    }
+
     public String getReturnID() {
         return returnID;
     }
@@ -73,10 +77,13 @@ public class ReturnRecord implements Serializable {
     public boolean validateReturnConditionSelected() {
 
         return retunCondition != null && !retunCondition.isBlank();
+
+
     }
 
     public static boolean validateAssetStatusAssigned(Asset asset) {
         return asset != null && Asset.status.equalsIgnoreCase(asset.getStatus());
+
     }
 
 }
