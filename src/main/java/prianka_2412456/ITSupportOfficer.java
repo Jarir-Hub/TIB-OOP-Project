@@ -17,7 +17,6 @@ public class ITSupportOfficer extends User implements Serializable {
         super(userID, password, userType);
     }
 
-    // ---------- CREATE ----------
 
     public Account createAccount(String name, String username, String password, String role) {
         List<Account> existingAccounts = viewAllAccount();
@@ -41,13 +40,13 @@ public class ITSupportOfficer extends User implements Serializable {
         return saved ? account : null;
     }
 
-    // ---------- READ ----------
+    //  READ
 
     public ArrayList<Account> viewAllAccount() {
         return BinaryFileUtility.readObjects(ACCOUNT_FILE);
     }
 
-    // ---------- DELETE ----------
+    // DELETE
 
     public boolean deleteAccount(String accountId, String currentlyLoggedInAccountId) {
         ArrayList<Account> existingAccounts = viewAllAccount();
@@ -68,7 +67,7 @@ public class ITSupportOfficer extends User implements Serializable {
         return BinaryFileUtility.overwriteObjects(ACCOUNT_FILE, existingAccounts);
     }
 
-    // ---------- RESET PASSWORD ----------
+    //  RESET PASSWORD
 
     public String resetPassword(String accountId) {
         ArrayList<Account> existingAccounts = viewAllAccount();
@@ -85,7 +84,7 @@ public class ITSupportOfficer extends User implements Serializable {
         return null;
     }
 
-    // ---------- SEARCH ----------
+    //  SEARCH
 
     public ArrayList<Account> searchAccount(String keyword) {
         ArrayList<Account> allAccounts = viewAllAccount();
@@ -98,7 +97,7 @@ public class ITSupportOfficer extends User implements Serializable {
         return matches;
     }
 
-    // ---------- CHANGE ROLE ----------
+    //   CHANGE ROLE
 
     public boolean changeRole(String accountId, String newRole) {
         if (!Account.validateRoleSelected(newRole)) {
@@ -115,7 +114,7 @@ public class ITSupportOfficer extends User implements Serializable {
         return false;
     }
 
-    // ---------- TOGGLE STATUS ----------
+    //   TOGGLE STATUS
 
     public String toggleStatus(String accountId) {
         ArrayList<Account> existingAccounts = viewAllAccount();
@@ -130,7 +129,7 @@ public class ITSupportOfficer extends User implements Serializable {
         return null;
     }
 
-    // ---------- AUDIT LOG ----------
+    // AUDIT LOG
 
     public ArrayList<Auditlog> viewAuditLog() {
         return BinaryFileUtility.readObjects(AUDIT_LOG_FILE);
