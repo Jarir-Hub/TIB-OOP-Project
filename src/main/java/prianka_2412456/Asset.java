@@ -3,115 +3,65 @@ package prianka_2412456;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Locale;
 
 public class Asset implements Serializable {
+
+    public static final String STATUS_AVAILABLE = "Available";
+    public static final String STATUS_ASSIGNED = "Assigned";
+    public static final String STATUS_UNDER_REPAIR = "Under Repair";
 
     String assetID;
     String name;
     String serialNumber;
-    int purchaseCost;
+    double purchaseCost;
     LocalDate purchaseDate;
     String catagory;
-    static String status;
+    String status;
     String location;
     String assignTo;
 
-// constutctor
-
-    public Asset(int userID, String password, String userType, String assetManager) {
-
+    public Asset() {
     }
 
-    public Asset(int userID, String password, String userType, String assetManager, String assetID, String name, String serialNUM, int purchaseCost, LocalDate purchaseDate, String catagory, String status, String location, String assignTo) {
-
+    public Asset(String assetID, String name, String serialNumber, double purchaseCost,
+                 LocalDate purchaseDate, String catagory, String status, String location, String assignTo) {
         this.assetID = assetID;
         this.name = name;
-        this.serialNumber = serialNUM;
-        this.purchaseCost = purchaseCost;
-        this.purchaseDate = purchaseDate;
-        this.catagory = catagory;
-        this.status = status;
-        this.location = location;
-        this.assignTo = assignTo;
-    }
-
-    // getter and setter
-
-    public String getAssetID() {
-        return assetID;
-    }
-
-    public void setAssetID(String assetID) {
-        this.assetID = assetID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSerialNumber() {
-        return serialNumber;
-    }
-
-    public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
-    }
-
-    public int getPurchaseCost() {
-        return purchaseCost;
-    }
-
-    public void setPurchaseCost(int purchaseCost) {
         this.purchaseCost = purchaseCost;
-    }
-
-    public LocalDate getPurchaseDate() {
-        return purchaseDate;
-    }
-
-    public void setPurchaseDate(LocalDate purchaseDate) {
         this.purchaseDate = purchaseDate;
-    }
-
-    public String getCatagory() {
-        return catagory;
-    }
-
-    public void setCatagory(String catagory) {
         this.catagory = catagory;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
         this.location = location;
-    }
-
-    public String getAssignTo() {
-        return assignTo;
-    }
-
-    public void setAssignTo(String assignTo) {
         this.assignTo = assignTo;
     }
 
+    public String getAssetID() { return assetID; }
+    public void setAssetID(String assetID) { this.assetID = assetID; }
 
-    // custom method starts here
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getSerialNumber() { return serialNumber; }
+    public void setSerialNumber(String serialNumber) { this.serialNumber = serialNumber; }
+
+    public double getPurchaseCost() { return purchaseCost; }
+    public void setPurchaseCost(double purchaseCost) { this.purchaseCost = purchaseCost; }
+
+    public LocalDate getPurchaseDate() { return purchaseDate; }
+    public void setPurchaseDate(LocalDate purchaseDate) { this.purchaseDate = purchaseDate; }
+
+    public String getCatagory() { return catagory; }
+    public void setCatagory(String catagory) { this.catagory = catagory; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+
+    public String getAssignTo() { return assignTo; }
+    public void setAssignTo(String assignTo) { this.assignTo = assignTo; }
 
     public boolean validateMandatoryFieldsFilled() {
         return name != null && !name.isBlank()
@@ -155,8 +105,4 @@ public class Asset implements Serializable {
     public String toString() {
         return name + " (" + serialNumber + ")";
     }
-
-
-
-
 }

@@ -82,7 +82,7 @@ public class ReturnRecord implements Serializable {
     }
 
     public static boolean validateAssetStatusAssigned(Asset asset) {
-        return asset != null && Asset.status.equalsIgnoreCase(asset.getStatus());
+        return asset != null && Asset.STATUS_ASSIGNED.equalsIgnoreCase(asset.getStatus());
 
     }
 
