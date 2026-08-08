@@ -10,6 +10,7 @@ public class Auditlog {
     int ipAddress;
     boolean sucessStatus;
 
+
     public Integer getLogid() {
         return logid;
     }
@@ -51,6 +52,14 @@ public class Auditlog {
     }
 
     public boolean validateDateRange(){
-       return false;
+        return false;
+    }
+
+
+    //validation method
+
+    public boolean validateDateRnage(LocalDate fromdate, LocalDate todate){
+
+        return fromdate != null && todate != null && fromdate.isAfter(todate);
     }
 }
