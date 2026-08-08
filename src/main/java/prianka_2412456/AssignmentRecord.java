@@ -69,20 +69,41 @@ public class AssignmentRecord  implements Serializable {
     }
 
 
-
     public boolean validateEmployeeActive() {
-        ArrayList<Object> accounts = BinaryFileUtility.readObjects("asset.bin");
+        ArrayList<Object> assets = BinaryFileUtility.readObjects("asset.bin");
 
-        for (Object obj : accounts) {
+        for (Object obj : assets) {
             try {
                 Asset asset = (Asset) obj;
-                if (asset.getAssetID().equals(assetID) && "Active".equalsIgnoreCase(asset.getStatus())) {
+                if (asset.getAssetID().equals(assetID) && asset.getStatus().equalsIgnoreCase("active")) {
                     return true;
                 }
             } catch (ClassCastException e) {
-                // obj wasn't an Account, skip it
+                // obj wasn't an asset, skip it
             }
         }
         return false;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
