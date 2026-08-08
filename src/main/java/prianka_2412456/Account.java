@@ -105,8 +105,8 @@ public class Account implements Serializable {
 
     }
 
-    public boolean validateUsernameUnique(String username, List<Account> existingAccount){
-        if(username != null || username.isBlank()){
+    public static boolean validateUsernameUnique(String username, List<Account> existingAccount){
+        if(username == null || username.isBlank()){
             return false;
         }
 
@@ -132,9 +132,13 @@ public class Account implements Serializable {
         return role!= null;
     }
 
+    public static boolean validateRoleSelected(String role){
+        return role != null && !role.isBlank();
+    }
+
     public boolean matchesSearchKeyword(String keyword){
-        if(keyword != null && keyword.isBlank()){
-            return false;
+        if(keyword == null || keyword.isBlank()){
+            return true;
         }
 
         String lowerKeyword = keyword.toLowerCase();

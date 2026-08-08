@@ -1,8 +1,9 @@
-package prianka_2412456;
+package  prianka_2412456;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Auditlog {
+public class Auditlog implements Serializable {
 
     int logid;
     String username;
@@ -60,6 +61,6 @@ public class Auditlog {
 
     public boolean validateDateRnage(LocalDate fromdate, LocalDate todate){
 
-        return fromdate != null && todate != null && fromdate.isAfter(todate);
+        return fromdate != null && todate != null && !fromdate.isAfter(todate);
     }
 }

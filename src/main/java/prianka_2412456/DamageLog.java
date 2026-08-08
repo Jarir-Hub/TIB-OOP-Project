@@ -1,9 +1,10 @@
 package prianka_2412456;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class DamageLog {
+public class DamageLog implements Serializable {
     String damageID;
     String assetID;
     String damageDescription;

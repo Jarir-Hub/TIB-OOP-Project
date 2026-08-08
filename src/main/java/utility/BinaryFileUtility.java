@@ -1,13 +1,15 @@
 package utility;
 
 import java.io.*;
+import java.io.*;
 import java.util.ArrayList;
 
 public class BinaryFileUtility {
 
-    public static ArrayList<Object> readObjects(String fileName) {
 
-        ArrayList<Object> objectsList = new ArrayList<>();
+    public static <T> ArrayList<T> readObjects(String fileName) {
+
+        ArrayList<T> objectsList = new ArrayList<>();
 
         if (fileName == null || fileName.isBlank()) {
             return objectsList;
@@ -23,23 +25,13 @@ public class BinaryFileUtility {
                      new ObjectInputStream(new FileInputStream(file))) {
 
             while (true) {
-                Object tempObject = ois.readObject();
+                T tempObject = (T) ois.readObject();
                 objectsList.add(tempObject);
             }
 
         } catch (EOFException e) {
             // all objects have been read
 
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
-
-        } catch (InvalidClassException e) {
-            System.out.println("The class structure has changed.");
-            e.printStackTrace();
-
-        } catch (StreamCorruptedException e) {
-            System.out.println("The binary file is corrupted or has invalid headers.");
-            e.printStackTrace();
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -81,7 +73,7 @@ public class BinaryFileUtility {
         return false;
     }
 
-    public static boolean overwriteObjects(String fileName, ArrayList<Object> objects) {
+    public static <T> boolean overwriteObjects(String fileName, ArrayList<T> objects) {
         if (fileName == null || objects == null) {
             return false;
         }
@@ -100,5 +92,4 @@ public class BinaryFileUtility {
             return false;
         }
     }
-
 }
