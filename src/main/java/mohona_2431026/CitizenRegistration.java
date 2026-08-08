@@ -79,7 +79,7 @@ public class CitizenRegistration {
             return;
         }
 
-<<<<<<< HEAD
+<<<<<<< H
 
 =======
 >>>>>>> 460e1881f3f59188d40bd1caa9142ae1528c4b17
